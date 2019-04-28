@@ -26,6 +26,14 @@ $app->post('/login', function (Request $request, Response $response, array $args
     }
 });
 
+//get all foods
+$app->get('/foods',function (Request $request, Response $response, array $args) {
+		$sql = $this->db->prepare("select * from food");
+		$sql->execute();
+		$foods = $sql->fetchAll();
+		return $this->response->withJson($foods);
+});
+
 //get food category
 $app->get('/food',function (Request $request, Response $response, array $args) {
 		$sql = $this->db->prepare("select distinct kategori from food");
