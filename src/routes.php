@@ -12,6 +12,21 @@ $app->get('/users', function (Request $request, Response $response, array $args)
 		return $this->response->withJson($users);
 });
 
+$app->post('/login', function (Request $request, Response $response, array $args) {
+    $input = $request->getParsedBody();
+    $sql = $this->db->prepare("select * from user where email=:email AND password=:password");
+    $sql->bindParam("email",$input['email']);
+    $sql->bindParam("password",$input['password']);
+    $sql->execute();
+    $user = $sql->fetchObject();
+    if(!$user){
+        return $this->response->withJson(['error'=>true,'message'=>'Invalid Email/Password']);
+    }else{
+        return $this->response->withJson(['error'=>false,'message'=>'Success']);
+    }
+});
+
+
 $app->get('/[{name}]', function (Request $request, Response $response, array $args) {
     // Sample log message
     $this->logger->info("Slim-Skeleton '/' route");
