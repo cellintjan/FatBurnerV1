@@ -26,6 +26,23 @@ $app->post('/login', function (Request $request, Response $response, array $args
     }
 });
 
+//get food category
+$app->get('/food',function (Request $request, Response $response, array $args) {
+		$sql = $this->db->prepare("select distinct kategori from food");
+		$sql->execute();
+		$kategori = $sql->fetchAll();
+		return $this->response->withJson($kategori);
+});
+
+//get list food / category
+$app->get('/food/{category}',function (Request $request, Response $response, array $args) {
+		$sql = $this->db->prepare("select * from food where kategori = :category");
+		$sql->bindParam("category", $args['category']);
+		$sql->execute();
+		$listFood = $sql->fetchAll();
+		return $this->response->withJson($listFood);
+});
+
 
 $app->get('/[{name}]', function (Request $request, Response $response, array $args) {
     // Sample log message
