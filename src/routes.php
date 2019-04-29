@@ -26,6 +26,27 @@ $app->post('/login', function (Request $request, Response $response, array $args
     }
 });
 
+//register
+$app->post('/register', function (Request $request, Response $response, array $args) {
+    $input = $request->getParsedBody();
+	$sql = $this->db->prepare("insert into user(email,password,goal,gender,weight,height,bloodsugar,cholesterol) values(:email,:password,:goal,:gender,:weight,:height,:bloodsugar,:cholesterol)");
+    $sql->bindParam("email",$input['email']);
+	$sql->bindParam("password",$input['password']);
+	$sql->bindParam("goal",$input['goal']);
+	$sql->bindParam("gender",$input['gender']);
+	$sql->bindParam("weight",$input['weight']);
+    $sql->bindParam("height",$input['height']);
+	$sql->bindParam("bloodsugar",$input['bloodsugar']);
+    $sql->bindParam("cholesterol",$input['cholesterol']);
+	$sql->execute();
+	$status = $sql->rowCount();
+    if(!$status){
+        return $this->response->withJson(['error'=>true,'message'=>'Register Failed']);
+    }else{
+        return $this->response->withJson(['error'=>false,'message'=>'Register Success']);
+    }
+});
+
 //get all foods
 $app->get('/foods',function (Request $request, Response $response, array $args) {
 		$sql = $this->db->prepare("select * from food");
@@ -59,3 +80,5 @@ $app->get('/[{name}]', function (Request $request, Response $response, array $ar
     // Render index view
     return $this->renderer->render($response, 'index.phtml', $args);
 });
+
+//php -S 192.168.0.26:8080 -t public index.php
