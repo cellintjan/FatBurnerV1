@@ -34,6 +34,24 @@ $app->get('/articles',function (Request $request, Response $response, array $arg
 	return $this->response->withJson($foods);
 });
 
+//insert article
+$app->post('/article/insert', function (Request $request, Response $response, array $args) {
+	$input = $request->getParsedBody();
+	$sql = $this->db->prepare("insert into artikel(user_id, judul, imageurl, isi)
+														 values(:user_id, :judul, :imageurl, :isi)");
+	$sql->bindParam("user_id",$input['user_id']);
+	$sql->bindParam("judul",$input['judul']);
+	$sql->bindParam("imageurl",$input['imageurl']);
+	$sql->bindParam("isi",$input['isi']);
+	$sql->execute();
+	$status = $sql->rowCount();
+	if(!$status){
+		return $this->response->withJson(['error'=>true,'message'=>'Insert Failed']);
+	}else{
+		return $this->response->withJson(['error'=>false,'message'=>'Insert Success']);
+	}
+});
+
 //register
 $app->post('/register', function (Request $request, Response $response, array $args) {
     $input = $request->getParsedBody();
@@ -81,10 +99,12 @@ $app->get('/food/{category}',function (Request $request, Response $response, arr
 });
 
 //get log makan
-$app->get('/food/log/{id}', function (Request $request, Response $response, array $args) {
+$app->get('/food/log/{id}/{filter}', function (Request $request, Response $response, array $args) {
+	$fil = $args['filter'] ."(tanggal) = " .$args['filter'] ."(CURRENT_DATE) and year(tanggal)=year(CURRENT_DATE)";
 	$sql = $this->db->prepare("select lm.id_log, f.nama, lm.tipe, lm.tanggal, lm.satuan, f.kalori, f.berat
 														 from logmakan lm, food f
-														 where lm.id_food = f.id and lm.id_user=:id");
+														 where lm.id_food = f.id and lm.id_user=:id
+														 and " .$fil);
 	$sql->bindParam("id",$args['id']);
 	$sql->execute();
 	$listLog = $sql->fetchAll();
@@ -109,11 +129,45 @@ $app->post('/food/log/insert', function (Request $request, Response $response, a
 	}
 });
 
+//update log makan
+$app->post('/food/log/update/{id}', function (Request $request, Response $response, array $args) {
+	$input = $request->getParsedBody();
+	$sql = $this->db->prepare("update logmakan set id_food=:id_food,
+														tipe=:tipe, satuan=:satuan
+														where id_log=:id");
+	$sql->bindParam("id",$args['id']);
+	$sql->bindParam("id_food",$input['id_food']);
+	$sql->bindParam("tipe",$input['tipe']);
+	$sql->bindParam("satuan",$input['satuan']);
+	$sql->execute();
+	$status = $sql->rowCount();
+	if(!$status){
+		return $this->response->withJson(['error'=>true,'message'=>'Update Failed']);
+	}else{
+		return $this->response->withJson(['error'=>false,'message'=>'Update Success']);
+	}
+});
+
+//delete log makan
+$app->delete('/food/log/delete/{id}', function (Request $request, Response $response, array $args) {
+		$sql = $this->db->prepare("delete from logmakan where id_log=:id");
+		$sql->bindParam("id", $args['id']);
+		$sql->execute();
+		$status = $sql->rowCount();
+		if(!$status){
+			return $this->response->withJson(['error'=>true,'message'=>'Delete Failed']);
+		}else{
+			return $this->response->withJson(['error'=>false,'message'=>'Delete Success']);
+		}
+});
+
 //get log workout
-$app->get('/workout/log/{id}', function (Request $request, Response $response, array $args) {
+$app->get('/workout/log/{id}/{filter}', function (Request $request, Response $response, array $args) {
+	$fil = $args['filter'] ."(tanggal) = " .$args['filter'] ."(CURRENT_DATE) and year(tanggal)=year(CURRENT_DATE)";
 	$sql = $this->db->prepare("select lw.id_log, w.nama, lw.tanggal, lw.waktu as waktu_workout, w.waktu as waktu_def, w.kalori
 														 from logworkout lw, workout w
-														 where lw.id_workout = w.id and lw.id_user=:id");
+														 where lw.id_workout = w.id and lw.id_user=:id
+														 and " .$fil);
 	$sql->bindParam("id",$args['id']);
 	$sql->execute();
 	$listLog = $sql->fetchAll();
@@ -135,6 +189,37 @@ $app->post('/workout/log/insert', function (Request $request, Response $response
 	}else{
 		return $this->response->withJson(['error'=>false,'message'=>'Insert Success']);
 	}
+});
+
+//update log workout
+$app->post('/workout/log/update/{id}', function (Request $request, Response $response, array $args) {
+	$input = $request->getParsedBody();
+	$sql = $this->db->prepare("update logworkout 
+														set id_workout=:id_workout, waktu=:waktu
+														where id_log=:id");
+	$sql->bindParam("id",$args['id']);
+	$sql->bindParam("id_workout",$input['id_workout']);
+	$sql->bindParam("waktu",$input['waktu']);
+	$sql->execute();
+	$status = $sql->rowCount();
+	if(!$status){
+		return $this->response->withJson(['error'=>true,'message'=>'Update Failed']);
+	}else{
+		return $this->response->withJson(['error'=>false,'message'=>'Update Success']);
+	}
+});
+
+//delete log workout
+$app->delete('/workout/log/delete/{id}', function (Request $request, Response $response, array $args) {
+		$sql = $this->db->prepare("delete from logworkout where id_log=:id");
+		$sql->bindParam("id", $args['id']);
+		$sql->execute();
+		$status = $sql->rowCount();
+		if(!$status){
+			return $this->response->withJson(['error'=>true,'message'=>'Delete Failed']);
+		}else{
+			return $this->response->withJson(['error'=>false,'message'=>'Delete Success']);
+		}
 });
 
 $app->get('/[{name}]', function (Request $request, Response $response, array $args) {
