@@ -31,15 +31,16 @@
             </li>
         </ul>
         <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8">
+            <div class="col-1"></div>
+            <div class="col-10">
                 <h2>Overview of Fat Secret APIs</h2>
             <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th scope="col-2">Method</th>
-                    <th scope="col-5">Endpoint</th>
-                    <th scope="col-5">Usage</th>
+                    <th scope="col-1">Method</th>
+                    <th scope="col-4">Endpoint</th>
+                    <th scope="col-2">Usage</th>
+                    <th scope="col-4">Response</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,6 +48,14 @@
                     <td>GET</td>
                     <td>/getFood</td>
                     <td>Get List of Food in database</td>
+                    <td> <pre>
+{
+ "access_token":"2YotnFZFEjr1zCsicMWpAA",
+ "token_type":"Bearer",
+ "expires_in":3600,
+ "scope":"resource.WRITE resource.READ"
+}                       </pre>
+                    </td>
                 </tr>
                 <tr>
                     <td>GET</td>
@@ -81,12 +90,12 @@
             </tbody>
         </table>
             </div>
-            <div class="col-2"></div>
+            <div class="col-1"></div>
         </div>
         
         <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8">
+            <div class="col-1"></div>
+            <div class="col-10">
                 <table class="table table-bordered">
                     <tr>
                         <td><h2>Authentication</h2></td>
@@ -98,7 +107,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="col-2"></div>
+            <div class="col-1"></div>
         </div>
         
         
