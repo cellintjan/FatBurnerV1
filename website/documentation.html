@@ -182,23 +182,23 @@ input[type=submit] {
                         </tr>
                         <tr>
                             <td>GET</td>
-                            <td>/api/food/Minuman</td>
-                            <td>Get Minuman</td>
+                            <td>/api/food/{kategori}</td>
+                            <td>Search Food</td>
                         </tr>
                         <tr>
                             <td>POST</td>
                             <td>/api/food/log/insert</td>
-                            <td>Insert Log Food</td>
+                            <td>Insert log food</td>
                         </tr>
                         <tr>
                             <td>POST</td>
-                            <td>/api/food/log/update/16</td>
-                            <td>Update</td>
+                            <td>/api/food/log/update/{id}</td>
+                            <td>Update log food</td>
                         </tr>
                         <tr>
                             <td>DEL</td>
-                            <td>/api/food/log/delete/16</td>
-                            <td>Delete food</td>
+                            <td>/api/food/log/delete/{id}</td>
+                            <td>Delete log food</td>
                         </tr>
                         <!-- workout-->
                         <tr>
@@ -213,12 +213,12 @@ input[type=submit] {
                         </tr>
                         <tr>
                             <td>POST</td>
-                            <td>/api/workout/log/update/8</td>
+                            <td>/api/workout/log/update/{id}</td>
                             <td>Update workout</td>
                         </tr>
                         <tr>
                             <td>DEL</td>
-                            <td>/api/workout/log/delete/8</td>
+                            <td>/api/workout/log/delete/{id}</td>
                             <td>Delete workout</td>
                         </tr>
                         <tr>
@@ -234,13 +234,13 @@ input[type=submit] {
                         <!--report-->
                         <tr>
                             <td>GET</td>
-                            <td>/api/workout/log/3/year</td>
-                            <td>Get Report</td>
+                            <td>/api/workout/log/{id}/{filter}</td>
+                            <td>Get Food Report</td>
                         </tr>
                         <tr>
                             <td>GET</td>
-                            <td>/api/food/log/3/year</td>
-                            <td>Get Report</td>
+                            <td>/api/food/log/{id}/{filter}</td>
+                            <td>Get Workout Report</td>
                         </tr>
                     </tbody>
                 </table>
@@ -481,7 +481,7 @@ input[type=submit] {
                         <th>Keterangan</th>
                     </tr>
                     <tr>
-                        <td>keyword</td>
+                        <td>kategori</td>
                         <td>String</td>
                         <td>Kata kunci</td>
                     </tr>
@@ -531,7 +531,7 @@ input[type=submit] {
                     <!-- Request -->
                     <blockquote>
                         <p>Cari Makanan
-                        <br><br>GET /api/food/{keyword}</p>
+                        <br><br>GET /api/food/{kategori}</p>
                     </blockquote>
                     <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
                         <pre class="highlight http" style="display: block;"><code> <span class="nf">GET</span> <span class="nn">/api/food/Makanan pokok</span>
