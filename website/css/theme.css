@@ -146,10 +146,30 @@ h6 {
 
 blockquote {
     display: block;
+    height: 100px;
+    width: 550px;
+    padding: 10px 0px 5px 20px;
     margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 40px;
     margin-inline-end: 40px;
+    background-color: #1c1c1c !important;
+    border-color: black;
+    border-radius: 15px;
+}
+
+blockquote.response {
+    display: block;
+    height: 50px;
+    width: 550px;
+    padding: 10px 0px 5px 20px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+    background-color: #1c1c1c !important;
+    border-color: black;
+    border-radius: 15px;
 }
 
 blockquote p {
@@ -168,6 +188,44 @@ blockquote p {
     text-shadow: 0px 1px 2px rgba(0,0,0,0.4);
 }
 
+.content code, .content pre {
+    font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+pre {
+    overflow: auto;
+    color: white;
+}
+
+.highlight .nf {
+    color: #ffff;
+}
+.highlight .nn {
+    color: #f4bf75;
+}
+.highlight .nt {
+    color: #f4bf75;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+    color: #aa759f;
+}
+.highlight .o, .highlight .ow {
+    color: #d0d0d0;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+    color: #90a959;
+}
+.highlight .na {
+    color: #6a9fb5;
+}
+.highlight .p, .highlight .pi {
+    color: #d0d0d0;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+    color: #90a959;
+}
 strong {
     font-weight: 700;
 }

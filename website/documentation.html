@@ -301,63 +301,115 @@ input[type=submit] {
                 </table>
             </div>
             <div class="col-6" style="background: black;">
-                <div class="row" style="margin: 5%">
-                    <blockquote>
-                        <p>Access Token
-                        <br><br>POST /api/oauth/token</p>
-                    </blockquote>
+                <!-- Request -->
+                <blockquote>
+                    <p>Access Token
+                    <br><br>POST /login</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"><code> <span class="nf">POST</span> <span class="nn">/login</span>
+ <span class="na">Host</span><span class="p">:</span> <span class="s">http://www.pikukupikumu.com/fat/public/login</span> 
+ <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span> 
+ <span class="na">Data</span><span class="p">:</span> 
+    <span class="na">Email</span><span class="p">:</span> <span class="s">rui@yahoo.com</span>
+    <span class="na">Password</span><span class="p">:</span> <span class="s">123</span> </code></pre> 
+                </div>
+                <!-- Response -->
+                <blockquote class="response">
+                    <p>Response :</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"> <code><span class="p">{</span><span class="w">
+</span><span class="nt">"error"</span><span class="p">:</span><span class="s2">false</span><span class="p">,</span><span class="w">
+</span><span class="nt">"message"</span><span class="p">:</span> <span class="p">{</span><span class="w">
+</span>         <span class="nt">"token"</span><span class="p">:</span><span class="s2">"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6I
+                  jMiLCJlbWFpbCI6InJ1aUB5YWhvby5jb20ifQ.Id1gj0ZDF
+                  So-PEH0J3fbfjWAP3XCZ_Zt0VmrDDqhPYU"</span><span class="p">,</span><span class="w">
+</span>         <span class="nt">"userid"</span><span class="p">:</span><span class="s2">"3"</span>
+    <span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code> </pre>
                 </div>
             </div>
         </div>
         <div class="row">
-                <div class="col-6">
-                    <br><br><h2>API Makanan</h2><br>
-                    <p>Untuk mengambil semua data makanan</p><br>
-                    <h4>Response</h4><br>
-                    <table class="table table-bordered" style="max-width: 650px;">
-                        <tr>
-                            <th>Nama Parameter</th>
-                            <th>Tipe Data</th>
-                            <th>Keterangan</th>
-                        </tr>
-                        <tr>
-                            <td>id</td>
-                            <td>String</td>
-                            <td>Nomor id makanan</td>
-                        </tr>
-                        <tr>
-                            <td>kategori</td>
-                            <td>String</td>
-                            <td>Nama kategori makanan</td>
-                        </tr>
-                        <tr>
-                            <td>nama</td>
-                            <td>String</td>
-                            <td>Nama makanan</td>
-                        </tr>
-                        <tr>
-                            <td>kalori</td>
-                            <td>String</td>
-                            <td>Jumlah kalori makanan</td>
-                        </tr>
-                        <tr>
-                            <td>satuan</td>
-                            <td>String</td>
-                            <td>Satuan makanan</td>
-                        </tr>
-                        <tr>
-                            <td>berat</td>
-                            <td>Integer</td>
-                            <td>Berat makanan</td>
-                        </tr>
-                    </table>
-                </div>
+            <div class="col-6">
+                <br><br><h2>API Makanan</h2><br>
+                <p>Untuk mengambil semua data makanan</p><br>
+                <h4>Response</h4><br>
+                <table class="table table-bordered" style="max-width: 650px;">
+                    <tr>
+                        <th>Nama Parameter</th>
+                        <th>Tipe Data</th>
+                        <th>Keterangan</th>
+                    </tr>
+                    <tr>
+                        <td>id</td>
+                        <td>String</td>
+                        <td>Nomor id makanan</td>
+                    </tr>
+                    <tr>
+                        <td>kategori</td>
+                        <td>String</td>
+                        <td>Nama kategori makanan</td>
+                    </tr>
+                    <tr>
+                        <td>nama</td>
+                        <td>String</td>
+                        <td>Nama makanan</td>
+                    </tr>
+                    <tr>
+                        <td>kalori</td>
+                        <td>String</td>
+                        <td>Jumlah kalori makanan</td>
+                    </tr>
+                    <tr>
+                        <td>satuan</td>
+                        <td>String</td>
+                        <td>Satuan makanan</td>
+                    </tr>
+                    <tr>
+                        <td>berat</td>
+                        <td>Integer</td>
+                        <td>Berat makanan</td>
+                    </tr>
+                </table>
+            </div>
                 <div class="col-6" style="background: black;">
-                    <div class="row" style="margin: 5%">
-                        <blockquote>
-                            <p>Access Token
-                            <br><br>POST /api/oauth/token</p>
-                        </blockquote>
+                    <br><br>
+                    <!-- Request -->
+                    <blockquote>
+                        <p>API Makanan<br><br>GET /api/foods</p>
+                    </blockquote>
+                    <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                        <pre class="highlight http" style="display: block;"><code> <span class="nf">GET</span> <span class="nn">/api/foods</span>
+ <span class="na">Host</span><span class="p">:</span> <span class="s">http://www.pikukupikumu.com/fat/public/api/foods</span>
+ <span class="na">Authorization</span><span class="p">:</span> <span class="s">Bearer {token}</span> </code></pre> 
+                    </div>
+                    <!-- Response -->
+                    <blockquote class="response">
+                        <p>Response :</p>
+                    </blockquote>
+                    <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                        <pre class="highlight http" style="display: block;"> <code><span class="p">[</span>
+    <span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span>
+        <span class="nt">"kategori"</span><span class="p">:</span><span class="s2">"Makanan pokok"</span><span class="w">,
+        </span><span class="nt">"nama"</span><span class="p">:</span><span class="s2">Jagung rebus</span><span class="p">,</span>
+        </span><span class="nt">"kalori"</span><span class="p">:</span><span class="s2">90</span><span class="p">,</span>
+        <span class="nt">"satuan"</span><span class="p">:</span><span class="s2">porsi</span><span class="p">,</span>
+        <span class="nt">"berat"</span><span class="p">:</span><span class="s2">250</span><span class="p"></span>
+    <span class="p">}</span><span class="w">,</span>
+    <span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span>
+        <span class="nt">"kategori"</span><span class="p">:</span><span class="s2">"Makanan pokok"</span><span class="w">,
+        </span><span class="nt">"nama"</span><span class="p">:</span><span class="s2">Kentang rebus</span><span class="p">,</span>
+        </span><span class="nt">"kalori"</span><span class="p">:</span><span class="s2">166</span><span class="p">,</span>
+        <span class="nt">"satuan"</span><span class="p">:</span><span class="s2">porsi</span><span class="p">,</span>
+        <span class="nt">"berat"</span><span class="p">:</span><span class="s2">200</span><span class="p"></span>
+    <span class="p">}</span><span class="w">,
+    </span><span class="p">...</span>
+ <span class="p">]</span></code> </pre>
                     </div>
                 </div>
             </div>
@@ -384,13 +436,33 @@ input[type=submit] {
                 </table>
             </div>
             <div class="col-6" style="background: black;">
-                <div class="row" style="margin: 5%">
+                    <br><br>
+                    <!-- Request -->
                     <blockquote>
-                        <p>Access Token
-                        <br><br>POST /api/oauth/token</p>
+                        <p>Kategori Makanan<br><br>GET /api/food</p>
                     </blockquote>
+                    <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                        <pre class="highlight http" style="display: block;"><code> <span class="nf">GET</span> <span class="nn">/api/foods</span>
+ <span class="na">Host</span><span class="p">:</span> <span class="s">http://www.pikukupikumu.com/fat/public/api/food</span>
+ <span class="na">Authorization</span><span class="p">:</span> <span class="s">Bearer {token}</span>
+ <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span> </code></pre> 
+                    </div>
+                    <!-- Response -->
+                    <blockquote class="response">
+                        <p>Response :</p>
+                    </blockquote>
+                    <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                        <pre class="highlight http" style="display: block;"> <code><span class="p">[</span>
+    <span class="p">{</span><span class="w">
+        </span><span class="nt">"kategori"</span><span class="p">:</span><span class="s2">"Makanan pokok"</span>
+    <span class="p">}</span><span class="w">,</span>
+    <span class="p">{</span><span class="w">
+        </span><span class="nt">"kategori"</span><span class="p">:</span><span class="s2">"Lauk pauk"</span>
+    <span class="p">}</span><span class="w">,
+    </span><span class="p">...</span>
+ <span class="p">]</span></code> </pre>
+                    </div>
                 </div>
-            </div>
         </div>
         <div class="row">
             <div class="col-6" style="height: 30px;"> </div>
@@ -453,13 +525,45 @@ input[type=submit] {
                 </table>
             </div>
             <div class="col-6" style="background: black;">
-                <div class="row" style="margin: 5%">
+                <br><br>
+                    <!-- PERLU DIPINDAH -->
+                    <!-- Request -->
                     <blockquote>
-                        <p>Access Token
-                        <br><br>POST /api/oauth/token</p>
+                        <p>Cari Makanan
+                        <br><br>GET /api/food/{keyword}</p>
                     </blockquote>
+                    <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                        <pre class="highlight http" style="display: block;"><code> <span class="nf">GET</span> <span class="nn">/api/food/Makanan pokok</span>
+ <span class="na">Host</span><span class="p">:</span> <span class="s">http://www.pikukupikumu.com/fat/public/api/food/Makanan pokok</span> 
+ <span class="na">Authorization</span><span class="p">:</span> <span class="s">Bearer {token}</span>
+ <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span> </code></pre> 
+                    </div>
+                    <!-- Response -->
+                    <blockquote class="response">
+                        <p>Response :</p>
+                    </blockquote>
+                    <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                        <pre class="highlight http" style="display: block;"> <code><span class="p">[</span>
+    <span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span>
+        <span class="nt">"kategori"</span><span class="p">:</span><span class="s2">"Makanan pokok"</span><span class="w">,
+        </span><span class="nt">"nama"</span><span class="p">:</span><span class="s2">Jagung rebus</span><span class="p">,</span>
+        </span><span class="nt">"kalori"</span><span class="p">:</span><span class="s2">90</span><span class="p">,</span>
+        <span class="nt">"satuan"</span><span class="p">:</span><span class="s2">porsi</span><span class="p">,</span>
+        <span class="nt">"berat"</span><span class="p">:</span><span class="s2">250</span><span class="p"></span>
+    <span class="p">}</span><span class="w">,</span>
+    <span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span>
+        <span class="nt">"kategori"</span><span class="p">:</span><span class="s2">"Makanan pokok"</span><span class="w">,
+        </span><span class="nt">"nama"</span><span class="p">:</span><span class="s2">Kentang rebus</span><span class="p">,</span>
+        </span><span class="nt">"kalori"</span><span class="p">:</span><span class="s2">166</span><span class="p">,</span>
+        <span class="nt">"satuan"</span><span class="p">:</span><span class="s2">porsi</span><span class="p">,</span>
+        <span class="nt">"berat"</span><span class="p">:</span><span class="s2">200</span><span class="p"></span>
+    <span class="p">}</span><span class="w">,
+    </span><span class="p">...</span>
+ <span class="p">]</span></code> </pre>
+                    </div>
                 </div>
-            </div>
         </div>
         <div class="row">
             <div class="col-6" style="height: 30px;"> </div>
@@ -517,12 +621,34 @@ input[type=submit] {
                     </table>
                 </div>
                 <div class="col-6" style="background: black;">
-                    <div class="row" style="margin: 5%">
-                        <blockquote>
-                            <p>Access Token
-                            <br><br>POST /api/oauth/token</p>
-                        </blockquote>
-                    </div>
+                    <br><br>
+                    <!-- Request -->
+                <blockquote>
+                    <p>Insert Log Makan
+                    <br><br>POST /api/food/log/insert</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"><code> <span class="nf">POST</span> <span class="nn">/api/food/log/insert</span>
+ <span class="na">Host</span><span class="p">:</span> <span class="s">http://www.pikukupikumu.com/fat/public/api/food/log/insert</span> 
+ <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span> 
+ <span class="na">Authorization</span><span class="p">:</span> <span class="s">Baerar {token}</span> 
+ <span class="na">Data</span><span class="p">:</span> 
+    <span class="na">"id user"</span><span class="p">:</span> <span class="s">"2"</span>
+    <span class="na">"id_food"</span><span class="p">:</span> <span class="s">"3"</span>
+    <span class="na">"tipe"</span><span class="p">:</span> <span class="s">"breakfast"</span>
+    <span class="na">"satuan"</span><span class="p">:</span> <span class="s">"5"</span></code></pre> 
+                </div>
+                <!-- Response -->
+                <blockquote class="response">
+                    <p>Response :</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"> <code><span class="p">{</span><span class="w">
+</span><span class="nt">"error"</span><span class="p">:</span><span class="s2">false</span><span class="p">,</span><span class="w">
+</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"Insert Success"</span>
+ <span class="w"></span><span class="p">}</span><span class="w">
+</span></code> </pre>
+                </div>
                 </div>
             </div>
             <div class="row">
@@ -579,12 +705,31 @@ input[type=submit] {
                     </table>
                 </div>
                 <div class="col-6" style="background: black;">
-                    <div class="row" style="margin: 5%">
-                        <blockquote>
-                            <p>Access Token
-                            <br><br>POST /api/oauth/token</p>
-                        </blockquote>
-                    </div>
+                    <br><br>
+                    <!-- Request -->
+                <blockquote>
+                    <p>Update Log Makan
+                    <br><br>POST /api/food/log/update/{id}</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"><code> <span class="nf">POST</span> <span class="nn">/api/food/log/update/16</span>
+ <span class="na">Host</span><span class="p">:</span> <span class="s">http://www.pikukupikumu.com/fat/public/api/food/log/update/16</span> 
+ <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span> 
+ <span class="na">Authorization</span><span class="p">:</span> <span class="s">Baerar {token}</span> 
+ <span class="na">Data</span><span class="p">:</span> 
+    <span class="na">"satuan"</span><span class="p">:</span> <span class="s">"3"</span></code></pre> 
+                </div>
+                <!-- Response -->
+                <blockquote class="response">
+                    <p>Response :</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"> <code><span class="p">{</span><span class="w">
+</span><span class="nt">"error"</span><span class="p">:</span><span class="s2">false</span><span class="p">,</span><span class="w">
+</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"Update Success"</span>
+ <span class="w"></span><span class="p">}</span><span class="w">
+</span></code> </pre>
+                </div>
                 </div>
             </div>
             <div class="row">
@@ -628,12 +773,28 @@ input[type=submit] {
                     </table>
                 </div>
                 <div class="col-6" style="background: black;">
-                    <div class="row" style="margin: 5%">
-                        <blockquote>
-                            <p>Access Token
-                            <br><br>POST /api/oauth/token</p>
-                        </blockquote>
-                    </div>
+                    <br><br>
+                    <!-- Request -->
+                <blockquote>
+                    <p>Delete Log Makan
+                    <br><br>DEL /api/food/log/delete/{id}</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"><code> <span class="nf">DEL</span> <span class="nn">/api/food/log/delete/16</span>
+ <span class="na">Host</span><span class="p">:</span> <span class="s">http://www.pikukupikumu.com/fat/public/api/food/log/delete/16</span> 
+ <span class="na">Authorization</span><span class="p">:</span> <span class="s">Baerar {token}</span> </code></pre> 
+                </div>
+                <!-- Response -->
+                <blockquote class="response">
+                    <p>Response :</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"> <code><span class="p">{</span><span class="w">
+</span><span class="nt">"error"</span><span class="p">:</span><span class="s2">true</span><span class="p">,</span><span class="w">
+</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"Delete Failed"</span>
+ <span class="w"></span><span class="p">}</span><span class="w">
+</span></code> </pre>
+                </div>
                 </div>
             </div>
             <div class="row">
@@ -675,11 +836,36 @@ input[type=submit] {
                     </table>
                 </div>
                 <div class="col-6" style="background: black;">
-                    <div class="row" style="margin: 5%">
-                        <blockquote>
-                            <p>Access Token
-                            <br><br>POST /api/oauth/token</p>
-                        </blockquote>
+                    <br><br>
+                    <!-- Request -->
+                    <blockquote>
+                        <p>API Workout<br><br>GET /api/workouts</p>
+                    </blockquote>
+                    <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                        <pre class="highlight http" style="display: block;"><code> <span class="nf">GET</span> <span class="nn">/api/workouts</span>
+ <span class="na">Host</span><span class="p">:</span> <span class="s">http://www.pikukupikumu.com/fat/public/api/workouts</span>
+ <span class="na">Authorization</span><span class="p">:</span> <span class="s">Bearer {token}</span> </code></pre> 
+                    </div>
+                    <!-- Response -->
+                    <blockquote class="response">
+                        <p>Response :</p>
+                    </blockquote>
+                    <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                        <pre class="highlight http" style="display: block;"> <code><span class="p">[</span>
+    <span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span>
+        </span><span class="nt">"nama"</span><span class="p">:</span><span class="s2">Boot Camp</span><span class="p">,</span>
+        </span><span class="nt">"kalori"</span><span class="p">:</span><span class="s2">16</span><span class="p">,</span>
+        <span class="nt">"waktu"</span><span class="p">:</span><span class="s2">1</span><span class="p">
+    <span class="p">}</span><span class="w">,</span>
+    <span class="p">{</span><span class="w">
+        </span><span class="nt">"id"</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span>
+        </span><span class="nt">"nama"</span><span class="p">:</span><span class="s2">Boxing</span><span class="p">,</span>
+        </span><span class="nt">"kalori"</span><span class="p">:</span><span class="s2">12</span><span class="p">,</span>
+        <span class="nt">"waktu"</span><span class="p">:</span><span class="s2">1</span><span class="p">,</span>
+    <span class="p">}</span><span class="w">,
+    </span><span class="p">...</span>
+ <span class="p">]</span></code> </pre>
                     </div>
                 </div>
             </div>
@@ -734,12 +920,33 @@ input[type=submit] {
                     </table>
                 </div>
                 <div class="col-6" style="background: black;">
-                    <div class="row" style="margin: 5%">
-                        <blockquote>
-                            <p>Access Token
-                            <br><br>POST /api/oauth/token</p>
-                        </blockquote>
-                    </div>
+                    <br><br>
+                    <!-- Request -->
+                <blockquote>
+                    <p>Insert Log Workout
+                    <br><br>POST /api/workout/log/insert</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"><code> <span class="nf">POST</span> <span class="nn">/api/workout/log/insert</span>
+ <span class="na">Host</span><span class="p">:</span> <span class="s">http://www.pikukupikumu.com/fat/public/api/workout/log/insert</span> 
+ <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span> 
+ <span class="na">Authorization</span><span class="p">:</span> <span class="s">Baerar {token}</span> 
+ <span class="na">Data</span><span class="p">:</span> 
+    <span class="na">"id user"</span><span class="p">:</span> <span class="s">"3"</span>
+    <span class="na">"id_workout"</span><span class="p">:</span> <span class="s">"7"</span>
+    <span class="na">"waktu"</span><span class="p">:</span> <span class="s">"30"</span></code></pre> 
+                </div>
+                <!-- Response -->
+                <blockquote class="response">
+                    <p>Response :</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"> <code><span class="p">{</span><span class="w">
+</span><span class="nt">"error"</span><span class="p">:</span><span class="s2">false</span><span class="p">,</span><span class="w">
+</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"Insert Success"</span>
+ <span class="w"></span><span class="p">}</span><span class="w">
+</span></code> </pre>
+                </div>
                 </div>
             </div>
             <div class="row">
@@ -796,12 +1003,31 @@ input[type=submit] {
                     </table>
                 </div>
                 <div class="col-6" style="background: black;">
-                    <div class="row" style="margin: 5%">
-                        <blockquote>
-                            <p>Access Token
-                            <br><br>POST /api/oauth/token</p>
-                        </blockquote>
-                    </div>
+                    <br><br>
+                    <!-- Request -->
+                <blockquote>
+                    <p>Update Log Workout
+                    <br><br>POST /api/workout/log/update/{id}</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"><code> <span class="nf">POST</span> <span class="nn">/api/workout/log/update/8</span>
+ <span class="na">Host</span><span class="p">:</span> <span class="s">http://www.pikukupikumu.com/fat/public/api/workout/log/update/8</span> 
+ <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span> 
+ <span class="na">Authorization</span><span class="p">:</span> <span class="s">Baerar {token}</span> 
+ <span class="na">Data</span><span class="p">:</span> 
+    <span class="na">"waktu"</span><span class="p">:</span> <span class="s">"45"</span></code></pre> 
+                </div>
+                <!-- Response -->
+                <blockquote class="response">
+                    <p>Response :</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"> <code><span class="p">{</span><span class="w">
+</span><span class="nt">"error"</span><span class="p">:</span><span class="s2">false</span><span class="p">,</span><span class="w">
+</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"Update Success"</span>
+ <span class="w"></span><span class="p">}</span><span class="w">
+</span></code> </pre>
+                </div>
                 </div>
             </div>
             <div class="row">
@@ -846,12 +1072,28 @@ input[type=submit] {
                     </table>
                 </div>
                 <div class="col-6" style="background: black;">
-                    <div class="row" style="margin: 5%">
-                        <blockquote>
-                            <p>Access Token
-                            <br><br>POST /api/oauth/token</p>
-                        </blockquote>
-                    </div>
+                    <br><br>
+                    <!-- Request -->
+                <blockquote>
+                    <p>Delete Log Workout
+                    <br><br>DEL /api/workout/log/delete/{id}</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"><code> <span class="nf">DEL</span> <span class="nn">/api/workout/log/delete/8</span>
+ <span class="na">Host</span><span class="p">:</span> <span class="s">http://www.pikukupikumu.com/fat/public/api/workout/log/delete/8</span> 
+ <span class="na">Authorization</span><span class="p">:</span> <span class="s">Baerar {token}</span> </code></pre> 
+                </div>
+                <!-- Response -->
+                <blockquote class="response">
+                    <p>Response :</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"> <code><span class="p">{</span><span class="w">
+</span><span class="nt">"error"</span><span class="p">:</span><span class="s2">true</span><span class="p">,</span><span class="w">
+</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"Delete Failed"</span>
+ <span class="w"></span><span class="p">}</span><span class="w">
+</span></code> </pre>
+                </div>
                 </div>
             </div>
             <div class="row">
@@ -897,11 +1139,51 @@ input[type=submit] {
                     </table>
                 </div>
                 <div class="col-6" style="background: black;">
-                    <div class="row" style="margin: 5%">
-                        <blockquote>
-                            <p>Access Token
-                            <br><br>POST /api/oauth/token</p>
-                        </blockquote>
+                    <br><br>
+                    <!-- Request -->
+                    <blockquote>
+                        <p>API Artikel<br><br>GET /api/articles</p>
+                    </blockquote>
+                    <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                        <pre class="highlight http" style="display: block;"><code> <span class="nf">GET</span> <span class="nn">/api/articles</span>
+ <span class="na">Host</span><span class="p">:</span> <span class="s">http://www.pikukupikumu.com/fat/public/api/articles</span>
+ <span class="na">Authorization</span><span class="p">:</span> <span class="s">Bearer {token}</span>
+ <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span> </code></pre> 
+                    </div>
+                    <!-- Response -->
+                    <blockquote class="response">
+                        <p>Response :</p>
+                    </blockquote>
+                    <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                        <pre class="highlight http" style="display: block;"> <code><span class="p">[</span>
+    <span class="p">{</span><span class="w">
+        </span><span class="nt">"artikelid"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span>
+        </span><span class="nt">"nama"</span><span class="p">:</span><span class="s2">Rui Fernando</span><span class="p">,</span>
+        </span><span class="nt">"imageurl"</span><span class="p">:</span><span class="s2">"https://akcdn.detik.net.id/community/
+                    media/visual/2016/01/30/9ff1e0e2-df31-
+                    4ba7-a1bd-37759e6e6976_169.jpg?w=700&q=90"</span><span class="p">,</span>
+        <span class="nt">"datecreated"</span><span class="p">:</span><span class="s2">"2019-04-29 05:17:00"</span><span class="p"><span class="p">,</span>
+        <span class="nt">"isi"</span><span class="p">:</span><span class="s2">"Jakarta - Bagi pecinta kopi, tidak meminum kopi seharian 
+                sepertinya bisa menjadi masalah besar. Terdapat 
+                beberapa efek yang akan dirasakan seperti sakit 
+                kepala yang terasa seperti pukulan drum di pelipismu.
+                ..."</span><span class="p">
+    <span class="p">}</span><span class="w">,</span>
+    <span class="p">{</span><span class="w">
+        </span><span class="nt">"artikelid"</span><span class="p">:</span><span class="s2">"2"</span><span class="p">,</span>
+        </span><span class="nt">"nama"</span><span class="p">:</span><span class="s2">Rui Fernando</span><span class="p">,</span>
+        </span><span class="nt">"imageurl"</span><span class="p">:</span><span class="s2">"https://akcdn.detik.net.id/community/
+                    media/visualisi/2016/01/30/9ff1e0e2-df31-
+                    4ba7-a1bd-37759e6e6976_169.jpg?w=700&q=90"</span><span class="p">,</span>
+        <span class="nt">"datecreated"</span><span class="p">:</span><span class="s2">"2019-04-29 05:17:00"</span><span class="p"><span class="p">,</span>
+        <span class="nt">"isi"</span><span class="p">:</span><span class="s2">"Jakarta - Bagi pecinta kopi, tidak meminum kopi seharian 
+                sepertinya bisa menjadi masalah besar. Terdapat 
+                beberapa efek yang akan dirasakan seperti sakit 
+                kepala yang terasa seperti pukulan drum di pelipismu.
+                ..."</span>
+    <span class="p">}</span><span class="w">,
+    </span><span class="p">...</span>
+ <span class="p">]</span></code> </pre>
                     </div>
                 </div>
             </div>
@@ -943,12 +1225,34 @@ input[type=submit] {
                     </table>
                 </div>
                 <div class="col-6" style="background: black;">
-                    <div class="row" style="margin: 5%">
-                        <blockquote>
-                            <p>Access Token
-                            <br><br>POST /api/oauth/token</p>
-                        </blockquote>
-                    </div>
+                    <br><br>
+                    <!-- Request -->
+                <blockquote>
+                    <p>Insert Artikel
+                    <br><br>POST /api/article/insert</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"><code> <span class="nf">POST</span> <span class="nn">/api/article/insert</span>
+ <span class="na">Host</span><span class="p">:</span> <span class="s">http://www.pikukupikumu.com/fat/public/api/article/insert</span> 
+ <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span> 
+ <span class="na">Authorization</span><span class="p">:</span> <span class="s">Baerar {token}</span> 
+ <span class="na">Data</span><span class="p">:</span> 
+    <span class="na">"id_user"</span><span class="p">:</span> <span class="s">"3"</span>
+    <span class="na">"imageurl"</span><span class="p">:</span> <span class="s">"https://akcdn.detik.net.id/community/media..."</span>
+    <span class="na">"judul"</span><span class="p">:</span> <span class="s">"Tips Mencegah Ngantuk"</span>
+    <span class="na">"isi"</span><span class="p">:</span> <span class="s">"Jakarta - Dua hal yang paling sering kita rasakan dan sulit un..."</span></code></pre> 
+                </div>
+                <!-- Response -->
+                <blockquote class="response">
+                    <p>Response :</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"> <code><span class="p">{</span><span class="w">
+</span><span class="nt">"error"</span><span class="p">:</span><span class="s2">false</span><span class="p">,</span><span class="w">
+</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"Insert Success"</span>
+ <span class="w"></span><span class="p">}</span><span class="w">
+</span></code> </pre>
+                </div>
                 </div>
             </div>
             <div class="row">
@@ -1018,11 +1322,32 @@ input[type=submit] {
                     </table>
                 </div>
                 <div class="col-6" style="background: black;">
-                    <div class="row" style="margin: 5%">
-                        <blockquote>
-                            <p>Access Token
-                            <br><br>POST /api/oauth/token</p>
-                        </blockquote>
+                    <br><br>
+                    <!-- Request -->
+                    <blockquote>
+                        <p>Report Workout<br><br>GET /api/workout/log/{id}/{filter}</p>
+                    </blockquote>
+                    <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                        <pre class="highlight http" style="display: block;"><code> <span class="nf">GET</span> <span class="nn">/api/workout/log/3/year</span>
+ <span class="na">Host</span><span class="p">:</span> <span class="s">http://www.pikukupikumu.com/fat/public/api/workout/log/3/year</span>
+ <span class="na">Authorization</span><span class="p">:</span> <span class="s">Bearer {token}</span> </code></pre> 
+                    </div>
+                    <!-- Response -->
+                    <blockquote class="response">
+                        <p>Response :</p>
+                    </blockquote>
+                    <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                        <pre class="highlight http" style="display: block;"> <code><span class="p">[</span>
+    <span class="p">{</span><span class="w">
+        </span><span class="nt">"id_log"</span><span class="p">:</span><span class="s2">"11"</span><span class="p">,</span>
+        <span class="nt">"nama"</span><span class="p">:</span><span class="s2">"Boot Camp"</span><span class="w">,
+        </span><span class="nt">"tanggal"</span><span class="p">:</span><span class="s2">"2019-05-28 17:41:56"</span><span class="p">,</span>
+        </span><span class="nt">"waktu_workout"</span><span class="p">:</span><span class="s2">"10"</span><span class="p">,</span>
+        <span class="nt">"waktu_def"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span>
+        <span class="nt">"kalori"</span><span class="p">:</span><span class="s2">"16"</span><span class="p"></span>
+    <span class="p">}</span><span class="w">,</span>
+    <span class="p">...</span>
+ <span class="p">]</span></code> </pre>
                     </div>
                 </div>
             </div>
@@ -1103,11 +1428,34 @@ input[type=submit] {
                     </table>
                 </div>
                 <div class="col-6" style="background: black;">
-                    <div class="row" style="margin: 5%">
-                        <blockquote>
-                            <p>Access Token
-                            <br><br>POST /api/oauth/token</p>
-                        </blockquote>
+                    <br><br>
+                    <!-- Request -->
+                    <blockquote>
+                        <p>Report Log Makanan<br><br>GET /api/food/log/{id}/{filter}</p>
+                    </blockquote>
+                    <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                        <pre class="highlight http" style="display: block;"><code> <span class="nf">GET</span> <span class="nn">/api/food/log/3/year</span>
+ <span class="na">Host</span><span class="p">:</span> <span class="s">http://www.pikukupikumu.com/fat/public/api/food/log/3/year</span>
+ <span class="na">Authorization</span><span class="p">:</span> <span class="s">Bearer {token}</span> </code></pre> 
+                    </div>
+                    <!-- Response -->
+                    <blockquote class="response">
+                        <p>Response :</p>
+                    </blockquote>
+                    <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                        <pre class="highlight http" style="display: block;"> <code><span class="p">[</span>
+    <span class="p">{</span><span class="w">
+        </span><span class="nt">"id_log"</span><span class="p">:</span><span class="s2">"8"</span><span class="p">,</span>
+        <span class="nt">"nama"</span><span class="p">:</span><span class="s2">"Singkong rebus"</span><span class="w">,
+        </span><span class="nt">"tipe"</span><span class="p">:</span><span class="s2">"breakfast"</span><span class="w">,
+        </span><span class="nt">"tanggal"</span><span class="p">:</span><span class="s2">"2019-05-11 16:16:14"</span><span class="p">,</span>
+        </span><span class="nt">"jumlah"</span><span class="p">:</span><span class="s2">"6"</span><span class="p">,</span>
+        <span class="nt">"satuan"</span><span class="p">:</span><span class="s2">"porsi"</span><span class="p">,</span>
+        <span class="nt">"kalori"</span><span class="p">:</span><span class="s2">"146"</span><span class="p"></span>
+        <span class="nt">"berat"</span><span class="p">:</span><span class="s2">"100"</span><span class="w">,</span>
+    <span class="p">}</span><span class="w">,</span>
+    <span class="p">...</span>
+ <span class="p">]</span></code> </pre>
                     </div>
                 </div>
             </div>
