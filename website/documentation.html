@@ -37,55 +37,177 @@
             <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th scope="col-1">Method</th>
-                    <th scope="col-4">Endpoint</th>
-                    <th scope="col-2">Usage</th>
-                    <th scope="col-4">Response</th>
+                    <th scope="col-2">Method</th>
+                    <th scope="col-2">Endpoint</th>
+                    <th scope="col-2">Description</th>
+                    <th scope="col-2">Header</th>
+                    <th scope="col-2">Request</th>
+                    <th scope="col-2">Response</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>GET</td>
-                    <td>/getFood</td>
-                    <td>Get List of Food in database</td>
+                    <td>POST</td>
+                    <td>/login</td>
+                    <td>Login service</td>
+                    <td></td>
                     <td> <pre>
 {
- "access_token":"2YotnFZFEjr1zCsicMWpAA",
- "token_type":"Bearer",
- "expires_in":3600,
- "scope":"resource.WRITE resource.READ"
-}                       </pre>
+    "email":"rui@yahoo.com",
+    "password":"123"
+}                      </pre>
                     </td>
+                    <td>Response</td>
                 </tr>
                 <tr>
                     <td>GET</td>
-                    <td>/getFood</td>
-                    <td>Get List of Food in database</td>
+                    <td>/api/foods</td>
+                    <td>Get Food</td>
+                    <td>Authorization</td>
+                    <td></td>
+                    <td>Response</td>
                 </tr>
                 <tr>
                     <td>GET</td>
-                    <td>/getFood</td>
-                    <td>Get List of Food in database</td>
+                    <td>/api/food</td>
+                    <td>Get Food Specifically</td>
+                    <td>Authorization</td>
+                    <td></td>
+                    <td>Response</td>
                 </tr>
                 <tr>
                     <td>GET</td>
-                    <td>/getFood</td>
-                    <td>Get List of Food in database</td>
+                    <td>/api/food/Minuman</td>
+                    <td>Get Minuman</td>
+                    <td>Authorization</td>
+                    <td></td>
+                    <td>Response</td>
+                </tr>
+                <tr>
+                    <td>POST</td>
+                    <td>/api/food/log/insert</td>
+                    <td>Insert Log Food</td>
+                    <td>Authorization</td>
+                    <td>
+<pre>
+{
+	"id_user":3,
+	"id_food":2,
+	"tipe":"breakfast",
+	"satuan":5
+}
+</pre>
+                    </td>
+                    <td>Response</td>
+                </tr>
+                <tr>
+                    <td>POST</td>
+                    <td>/api/food/log/update/16</td>
+                    <td>Update</td>
+                    <td>Authorization</td>
+                    <td>
+<pre>
+{
+	"satuan":3
+}
+</pre>
+                    </td>
+                    <td>Response</td>
+                </tr>
+                <tr>
+                    <td>DEL</td>
+                    <td>/api/food/log/delete/16</td>
+                    <td>Delete food</td>
+                    <td>Authorization</td>
+                    <td></td>
+                    <td>Response</td>
+                </tr>
+                <!-- workout-->
+                <tr>
+                    <td>GET</td>
+                    <td>/api/workouts</td>
+                    <td>Get workout</td>
+                    <td>Authorization</td>
+                    <td></td>
+                    <td>Response</td>
+                </tr>
+                <tr>
+                    <td>POST</td>
+                    <td>/api/workout/log/insert</td>
+                    <td>Insert workout</td>
+                    <td>Authorization</td>
+                    <td>
+<pre>
+{
+	"id_user":3,
+	"id_workout":7,
+	"waktu":30
+}
+</pre>                    
+                    </td>
+                    <td>Response</td>
+                </tr>
+                <tr>
+                    <td>POST</td>
+                    <td>/api/workout/log/update/8</td>
+                    <td>Update workout</td>
+                    <td>Authorization</td>
+                    <td>
+<pre>
+{
+    "waktu":45
+}
+</pre>                    
+                    </td>
+                    <td>Response</td>
+                </tr>
+                <tr>
+                    <td>DEL</td>
+                    <td>/api/workout/log/delete/8</td>
+                    <td>Delete workout</td>
+                    <td>Authorization</td>
+                    <td></td>
+                    <td>Response</td>
                 </tr>
                 <tr>
                     <td>GET</td>
-                    <td>/getFood</td>
-                    <td>Get List of Food in database</td>
+                    <td>/api/articles</td>
+                    <td>Get artikel</td>
+                    <td>Authorization</td>
+                    <td></td>
+                    <td>Response</td>
+                </tr>
+                <tr>
+                    <td>POST</td>
+                    <td>/api/article/insert</td>
+                    <td>Insert artikel</td>
+                    <td>Authorization</td>
+                    <td>
+                        <p>{</p>
+                        <p>"user_id":3,</p>
+                        <p>"imageurl":"https://akcdn.detik.net.id/community/media/visual/2019/01/15/892c7f91-e0c1-47a1-a33f-931bc5b46261_169.jpeg?w=700&q=90",</p>
+                        <p>"judul":"Tips Mencegah Ngantuk",</p>
+                        <p>"isi":"Jakarta - Dua hal yang paling sering kita rasakan dan sulit untuk mengatasinya di bulan Ramadhan adalah rasa lapar dan mengantuk. Tak tanggung-tanggung, kadang dua hal ini justru menyerang di pagi hari saat kita seharusnya produktif."</p>
+                        <p>}</p>
+                    </td>
+                    <td>Response</td>
+                </tr>
+                <!--report-->
+                <tr>
+                    <td>GET</td>
+                    <td>/api/workout/log/3/year</td>
+                    <td>Get Report</td>
+                    <td>Authorization</td>
+                    <td></td>
+                    <td>Response</td>
                 </tr>
                 <tr>
                     <td>GET</td>
-                    <td>/getFood</td>
-                    <td>Get List of Food in database</td>
-                </tr>
-                <tr>
-                    <td>GET</td>
-                    <td>/getFood</td>
-                    <td>Get List of Food in database</td>
+                    <td>/api/food/log/3/year</td>
+                    <td>Get Report</td>
+                    <td>Authorization</td>
+                    <td></td>
+                    <td>Response</td>
                 </tr>
             </tbody>
         </table>
