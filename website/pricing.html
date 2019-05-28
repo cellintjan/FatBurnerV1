@@ -1,6 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
+<style type="text/css">
+    a {
+        color: #EE9500 !important;
+    }
+</style>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,16 +14,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
     <title>Home</title>
+    
 </head>
-<body>    
-    <div class="container-fluid" style="padding: 0px">
+<body style="overflow-x: hidden;overflow-y: scroll;">    
+    <div class="container-fluid" style="background-color: black; height: 100%;">
         <!-- navbar -->
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link active" href="home.html">Home</a>
+                <a class="nav-link" href="home.html">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" href="#">APIs</a>
+                <a class="nav-link" href="#">APIs</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="documentation.html">Documentation</a>
@@ -30,60 +36,140 @@
                 <a class="nav-link" href="#">About</a>
             </li>
         </ul>
-        
-        
-        
-        <div class="jumbotron text-center" style="margin-bottom: 0px;background-color: #EE9500;height: 100%">
-            <div class="row">
-                <div class="col-5"></div>
-                <div class="col2">
-                    <div class="card" style="width: 18rem;">
-            <div class="card-body" style="text-align: center">
-                <h5 class="card-title">Pricing</h5>
-            <p class="card-text">Rp 100 / HIT</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-                </div>
-            </div>
-          
-        </div>
-            
-<!--
-            <h1>Informasi Harga</h1><br>
-            <div class="row">
-                <div class="col-5"></div>
-                <div class="col-2">                    
-                    <div style="box-shadow: 5px;border: solid;">
-                        <h2>Pricing</h2>
-                        <h3>Rp 50 / HIT</h3>
+    </div>
+    <!--
+    <div class="container-fluid" style="padding: 30px;">
+    <h1>Fat Burner API Pricing Overview</h1><br>
+        <table class="table table-bordered">
+            <thead>
+                <tr style="background-color: #EE9500">
+                    <th>Services</th>
+                    <th>Description</th>
+                    <th colspan="3" class="text-center">Monthly Use (PRICE PER HIT) </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center">
+                    <td></td>
+                    <td></td>
+                    <td>0 - 1.000</td>
+                    <td>1.000 - 5.000</td>
+                    <td>5.001 ++</td>
+                </tr>
+                <tr>
+                    <td>Food</td>
+                    <td>Unlimited loads</td>
+                    <td>Rp 0</td>
+                    <td>Rp 0</td>
+                    <td>Rp 0</td>
+                </tr>
+                <tr>
+                    <td>Drink</td>
+                    <td>Unlimited loads</td>
+                    <td>Rp 0</td>
+                    <td>Rp 0</td>
+                    <td>Rp 0</td>
+                </tr>
+                <tr>
+                    <td>Workout</td>
+                    <td>Up To 1.000 loads</td>
+                    <td>Rp 100</td>
+                    <td>Rp 90</td>
+                    <td>Rp 75</td>
+                </tr>
+                <tr>
+                    <td>Article</td>
+                    <td>Up To 2.500 loads</td>
+                    <td>Rp 125</td>
+                    <td>Rp 110</td>
+                    <td>Rp 100</td>
+                </tr>
+                <tr>
+                    <td>Report</td>
+                    <td>Up To 500</td>
+                    <td>Rp 250</td>
+                    <td>Rp 225</td>
+                    <td>Rp 190</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>-->
+    
+    <div class="container-fluid" style="padding: 30px;">
+        <h1>Fat Burner API Pricing Overview</h1><br><br>
+        <div class="row">
+            <div class="col-3">
+                <div class="card text-center" style="width: 22rem;border: 1px;border-style: solid">
+                    <div class="card-body">
+                    <h5 class="card-title">Free</h5>
+                    <p class="card-text"><h4>Cocok untuk mempelajari cara kerja API</h4></p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">CORE Services Only</li>
+                        <li class="list-group-item">Sleeps After 60 Minutes of Inactivity</li>
+                        <li class="list-group-item">1.000 Call / 24h</li>
+                        <li class="list-group-item">Single Access</li>
+                        <br><br>
+                    <a href="#" class="btn btn-dark">Free</a></li>
+                    </ul>
                     </div>
                 </div>
             </div>
--->
-            
-        </div>
-        
-<!--
-        
-        <div class="container-fluid">
-            <div class="jumbotron text-center" style="margin-bottom: 0px">
-          <h1>Pricing</h1>
-            <p>Information About Price</p> 
-        </div>
-            <h1>Pricing</h1>
-            <div class="shadow-sm p-3 mb-5 bg-white rounded">
-                <div class="row">
-                    <h3>Rp 100/HIT API</h3>
+            <div class="col-3">
+                <div class="card text-center" style="width: 22rem;border: 1px;border-style: solid">
+                    <div class="card-body">
+                    <h5 class="card-title">Basic</h5>
+                    <p class="card-text"><h4>Cocok untuk aplikasi baru yang relatif kecil</h4></p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">CORE Services Only</li>
+                        <li class="list-group-item">Sleeps After 60 Minutes of Inactivity</li>
+                        <li class="list-group-item">1.000 Call / 24h</li>
+                        <li class="list-group-item">Multiple Access</li>
+                        <br><br>
+                    <a href="#" class="btn btn-dark">Rp 50.000 / MONTH</a></li>
+                    </ul>
+                    </div>
                 </div>
             </div>
-        </div>      
-        
-        
-        <div class="container-fluid" style="background-color: dimgrey;margin-bottom: 0px;height: 60px;bottom: 0;position: fixed">
-            <h2 style="color: white">Copyrights Kelompok SOA 2018-2019</h2>
+            <div class="col-3">
+                <div class="card text-center" style="width: 22rem;border: 1px;border-style: solid">
+                    <div class="card-body">
+                    <h5 class="card-title">Silver</h5>
+                    <p class="card-text"><h4>Cocok untuk aplikasi berkembang</h4></p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">All Services</li>
+                        <li class="list-group-item">Never Sleeps</li>
+                        <li class="list-group-item">5.000 Call / 24h</li>
+                        <li class="list-group-item">Multiple Access</li>
+                        <br><br>
+                    <a href="#" class="btn btn-dark">Rp 200.000 / MONTH</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card text-center" style="width: 22rem;border: 1px;border-style: solid">
+                    <div class="card-body">
+                    <h5 class="card-title">Gold</h5>
+                    <p class="card-text"><h4>Cocok untuk aplikasi relatif besar</h4></p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">All Services</li>
+                        <li class="list-group-item">Never Sleeps</li>
+                        <li class="list-group-item">Unlimited</li>
+                        <li class="list-group-item">Multiple Access</li>
+                        <br><br>
+                    <a href="#" class="btn btn-dark">Rp 200 / HIT</a></li>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+            
         </div>
--->
-        
     </div>
+    
+    <footer>
+        <div class="container-fluid" style="background-color: orange;bottom: 0px;position: fixed;margin-bottom: 0px; height: 60px; text-align: center; margin-bottom: 0px; padding: 16px">
+            <p><b>@Copyrights Kelompok SOA 2018-2019</b></p>
+        </div> 
+    </footer>
 </body>
 </html>
