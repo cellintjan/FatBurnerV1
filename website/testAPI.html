@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="/FatBurnerV1/website/jquery-3.2.1.min.js"> </script>
+		
+    <title>Home</title>
+		<style>
+			.white{
+				color : white !important;
+			}
+			.method_get{
+				background-color : green;
+				padding : 10px;
+			}
+			.path_get{
+				background-color : green;
+				opacity : 0.5;
+				padding : 10px;
+				width : 100%;
+			}
+			.method_post{
+				background-color : blue;
+				padding : 10px;
+			}
+			.path_post{
+				background-color : blue;
+				opacity : 0.5;
+				padding : 10px;
+				width : 100%;
+			}
+			.method_del{
+				background-color : red;
+				padding : 10px;
+			}
+			.path_del{
+				background-color : red;
+				opacity : 0.5;
+				padding : 10px;
+				width : 100%;
+			}
+			.tbCoba{
+				background-color : #ffc10761;
+				border-radius: 20px;
+				margin: 10px;
+				padding: 10px;
+			}
+			
+		</style>
+</head>
+<body>    
+    <div class="container-fluid" style="padding: 0px">
+        <!-- navbar -->
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link active" href="home.html">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#">APIs</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="documentation.html">Documentation</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="pricing.html">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+            </li>
+        </ul>
+        <div class="container-fluid">
+            <div class="jumbotron text-center" style="margin-bottom: 0px">
+							<h1>TEST API</h1>
+							<p>....</p> 
+						</div>
+						
+						<br>
+						<div class="row url" kode="0" style="padding-left: 20px; padding-right: 20px;">
+							<div class="col-1 method_post text-center">
+								<a href="#" class="method white">POST</a>
+							</div>
+							<div class="col-11 path_post">
+								<a href="#" class="tag white">/login</a>
+							</div>
+						</div>
+						
+						<div class="tbCoba 0" style="display:none">
+							Email		: <input type="text" id="email0"> <br> <br>
+							Pass &nbsp 	: <input type="text" id="pass0"> <br> <br>
+							
+							<button class="tryLogin"> COBA </button> <br>
+							<br> RESPONSE : <br>
+							<div id="hasil0"> </div>
+						</div>
+						
+						
+						<br>
+						<div class="row url" kode="1" style="padding-left: 20px; padding-right: 20px;">
+							<div class="col-1 method_get text-center">
+								<a href="#" class="method white">GET</a>
+							</div>
+							<div class="col-11 path_get">
+								<a href="#" class="tag white">/api/foods</a>
+							</div>
+						</div>
+						
+						<div class="tbCoba 1" style="display:none">
+							AUTHORIZATION : 
+							<input type="text" id="authorization1" style="width:100%" value="Bearer "> <br> <br>
+							<button class="try"> COBA </button> <br>
+							<br> RESPONSE : <br>
+							<div id="hasil1"> </div>
+						</div>
+						
+						
+						<br>
+						<div class="row url" kode="2" style="padding-left: 20px; padding-right: 20px;">
+							<div class="col-1 method_get text-center">
+								<a href="#" class="method white">GET</a>
+							</div>
+							<div class="col-11 path_get">
+								<a href="#" class="tag white">/api/food</a>
+							</div>
+						</div>
+						
+						<div class="tbCoba 2" style="display:none">
+							AUTHORIZATION : 
+							<input type="text" id="authorization2" style="width:100%" value="Bearer "> <br> <br>
+							<button class="try"> COBA </button> <br>
+							<br> RESPONSE : <br>
+							<div id="hasil2"> </div>
+						</div>
+						
+						
+						<br>
+						<div class="row url" kode="5" style="padding-left: 20px; padding-right: 20px;">
+							<div class="col-1 method_get text-center">
+								<a href="#" class="method white">GET</a>
+							</div>
+							<div class="col-11 path_get">
+								<a href="#" class="tag white">/api/food/{category}</a>
+							</div>
+						</div>
+						
+						<div class="tbCoba 5" style="display:none">
+							AUTHORIZATION : 
+							<input type="text" id="authorization5" style="width:100%" value="Bearer "> <br> <br>
+							Category : <input type="text" id="param5"> <br> <br>
+							<button class="tryParam"> COBA </button> <br>
+							<br> RESPONSE : <br>
+							<div id="hasil5"> </div>
+						</div>
+						
+						
+						<br>
+						<div class="row url" kode="3" style="padding-left: 20px; padding-right: 20px;">
+							<div class="col-1 method_get text-center">
+								<a href="#" class="method white">GET</a>
+							</div>
+							<div class="col-11 path_get">
+								<a href="#" class="tag white">/api/workouts</a>
+							</div>
+						</div>
+						
+						<div class="tbCoba 3" style="display:none">
+							AUTHORIZATION : 
+							<input type="text" id="authorization3" style="width:100%" value="Bearer "> <br> <br>
+							<button class="try"> COBA </button> <br>
+							<br> RESPONSE : <br>
+							<div id="hasil3"> </div>
+						</div>
+						
+						
+						<br>
+						<div class="row url" kode="4" style="padding-left: 20px; padding-right: 20px;">
+							<div class="col-1 method_get text-center">
+								<a href="#" class="method white">GET</a>
+							</div>
+							<div class="col-11 path_get">
+								<a href="#" class="tag white">/api/articles</a>
+							</div>
+						</div>
+						
+						<div class="tbCoba 4" style="display:none">
+							AUTHORIZATION : 
+							<input type="text" id="authorization4" style="width:100%" value="Bearer "> <br> <br>
+							<button class="try"> COBA </button> <br>
+							<br> RESPONSE : <br>
+							<div id="hasil4"> </div>
+						</div>
+        
+						
+						<br>
+						<div class="row url" kode="6" style="padding-left: 20px; padding-right: 20px;">
+							<div class="col-1 method_del text-center">
+								<a href="#" class="method white">DELETE</a>
+							</div>
+							<div class="col-11 path_del">
+								<a href="#" class="tag white">/api/food/log/delete/{id}</a>
+							</div>
+						</div>
+						
+						<div class="tbCoba 6" style="display:none">
+							AUTHORIZATION : 
+							<input type="text" id="authorization6" style="width:100%" value="Bearer "> <br> <br>
+							ID : <input type="text" id="param6"> <br> <br>
+							<button class="tryParam"> COBA </button> <br>
+							<br> RESPONSE : <br>
+							<div id="hasil6"> </div>
+						</div>
+				
+				</div>   
+		</div>
+		
+    <br>   
+    <footer>
+        <div class="container-fluid" style="background-color: orange; margin-bottom: 0px; height: 60px; text-align: center; margin-bottom: 0px; padding: 16px">
+            <p><b>@Copyrights Kelompok SOA 2018-2019</b></p>
+        </div> 
+    </footer>
+</body>
+
+<script type="text/javascript">
+	var url = "";
+	var reqUrl = "";
+	var method = "";
+	var kode = "";
+	var tempUrl = "";
+	
+	function ajax(params, token){
+		$.ajax({ 
+			 type : method, 
+			 url : reqUrl, 
+			 data : params,
+			 beforeSend: function(xhr){
+				xhr.setRequestHeader('Authorization', token);
+			 },
+			 success : function(result) { 
+					 $(".tbCoba."+kode).css("display","block");
+					 $("#hasil"+kode).html("<pre>" + JSON.stringify(result, undefined, 2) + "</pre>");
+			 },
+			 error : function(err){
+					var error = err.responseJSON;
+					$("#hasil"+kode).html("<pre>" + JSON.stringify(error, undefined, 2) + "</pre>");
+			 }
+		 }); 
+	}
+	
+	$(document).ready(function(){
+		$(".url").click(function(e){
+			e.preventDefault();
+			url = $("a.tag",this).html();
+			var index = url.search("{");
+			if(index != -1) url = url.substring(0, index);
+			
+			reqUrl = "http://pikukupikumu.com/fat/public" + url;
+			tempUrl = reqUrl;
+			method = $("a.method",this).html();
+			kode = $(this).attr("kode");
+			
+			$(".tbCoba").css("display","none");
+			$(".tbCoba."+kode).css("display","block");
+			$("#hasil"+kode).html("");
+		});
+		
+		$(".try").click(function(){
+			var token = $("#authorization"+kode).val();
+			ajax({}, token);
+		});
+		
+		$(".tryLogin").click(function(){
+			var params = {
+				"email" : $("#email0").val(),
+				"password" : $("#pass0").val()
+			};
+			ajax(params,"");
+		});
+		
+		$(".tryParam").click(function(){
+			var token = $("#authorization"+kode).val();
+			var param = $("#param"+kode).val();
+			reqUrl = tempUrl + param;
+			ajax({},token);
+		});
+		
+		
+		
+	});
+</script>
+
+</html>
