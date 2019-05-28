@@ -11,8 +11,20 @@
 		
     <title>Home</title>
 		<style>
+			a {
+        color: orange !important;
+			}
 			.white{
 				color : white !important;
+			}
+			.green{
+				background-color : #b9ffabba;
+			}
+			.red{
+				background-color : #ff3f3f47;
+			}
+			.blue{
+				background-color : #9897ff61;
 			}
 			.method_get{
 				background-color : green;
@@ -45,7 +57,6 @@
 				width : 100%;
 			}
 			.tbCoba{
-				background-color : #ffc10761;
 				border-radius: 20px;
 				margin: 10px;
 				padding: 10px;
@@ -55,24 +66,27 @@
 </head>
 <body>    
     <div class="container-fluid" style="padding: 0px">
-        <!-- navbar -->
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active" href="home.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="#">APIs</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="documentation.html">Documentation</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="pricing.html">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-            </li>
-        </ul>
+        <div class="container-fluid" style="background-color: black; height: 100%;">
+            <!-- navbar -->
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="testAPI.html">APIs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="documentation.html">Documentation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pricing.html">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+        </div>
+				
         <div class="container-fluid">
             <div class="jumbotron text-center" style="margin-bottom: 0px">
 							<h1>TEST API</h1>
@@ -89,7 +103,7 @@
 							</div>
 						</div>
 						
-						<div class="tbCoba 0" style="display:none">
+						<div class="tbCoba 0 blue" style="display:none">
 							Email		: <input type="text" id="email0"> <br> <br>
 							Pass &nbsp 	: <input type="text" id="pass0"> <br> <br>
 							
@@ -109,7 +123,7 @@
 							</div>
 						</div>
 						
-						<div class="tbCoba 1" style="display:none">
+						<div class="tbCoba 1 green" style="display:none">
 							AUTHORIZATION : 
 							<input type="text" id="authorization1" style="width:100%" value="Bearer "> <br> <br>
 							<button class="try"> COBA </button> <br>
@@ -128,7 +142,7 @@
 							</div>
 						</div>
 						
-						<div class="tbCoba 2" style="display:none">
+						<div class="tbCoba 2 green" style="display:none">
 							AUTHORIZATION : 
 							<input type="text" id="authorization2" style="width:100%" value="Bearer "> <br> <br>
 							<button class="try"> COBA </button> <br>
@@ -147,7 +161,7 @@
 							</div>
 						</div>
 						
-						<div class="tbCoba 5" style="display:none">
+						<div class="tbCoba 5 green" style="display:none">
 							AUTHORIZATION : 
 							<input type="text" id="authorization5" style="width:100%" value="Bearer "> <br> <br>
 							Category : <input type="text" id="param5"> <br> <br>
@@ -167,7 +181,7 @@
 							</div>
 						</div>
 						
-						<div class="tbCoba 3" style="display:none">
+						<div class="tbCoba 3 green" style="display:none">
 							AUTHORIZATION : 
 							<input type="text" id="authorization3" style="width:100%" value="Bearer "> <br> <br>
 							<button class="try"> COBA </button> <br>
@@ -186,7 +200,7 @@
 							</div>
 						</div>
 						
-						<div class="tbCoba 4" style="display:none">
+						<div class="tbCoba 4 green" style="display:none">
 							AUTHORIZATION : 
 							<input type="text" id="authorization4" style="width:100%" value="Bearer "> <br> <br>
 							<button class="try"> COBA </button> <br>
@@ -205,7 +219,7 @@
 							</div>
 						</div>
 						
-						<div class="tbCoba 6" style="display:none">
+						<div class="tbCoba 6 red" style="display:none">
 							AUTHORIZATION : 
 							<input type="text" id="authorization6" style="width:100%" value="Bearer "> <br> <br>
 							ID : <input type="text" id="param6"> <br> <br>
@@ -214,6 +228,80 @@
 							<div id="hasil6"> </div>
 						</div>
 				
+					
+						<br>
+						<div class="row url" kode="7" style="padding-left: 20px; padding-right: 20px;">
+							<div class="col-1 method_del text-center">
+								<a href="#" class="method white">DELETE</a>
+							</div>
+							<div class="col-11 path_del">
+								<a href="#" class="tag white">/api/workout/log/delete/{id}</a>
+							</div>
+						</div>
+						
+						<div class="tbCoba 7 red" style="display:none">
+							AUTHORIZATION : 
+							<input type="text" id="authorization7" style="width:100%" value="Bearer "> <br> <br>
+							ID : <input type="text" id="param7"> <br> <br>
+							<button class="tryParam"> COBA </button> <br>
+							<br> RESPONSE : <br>
+							<div id="hasil7"> </div>
+						</div>
+						
+						
+						<br>
+						<div class="row url" kode="8" style="padding-left: 20px; padding-right: 20px;">
+							<div class="col-1 method_get text-center">
+								<a href="#" class="method white">GET</a>
+							</div>
+							<div class="col-11 path_get">
+								<a href="#" class="tag white">/api/food/log/{id}/{filter}</a>
+							</div>
+						</div>
+						
+						<div class="tbCoba 8 green" style="display:none">
+							AUTHORIZATION : 
+							<input type="text" id="authorization8" style="width:100%" value="Bearer "> <br> <br>
+							ID : <input type="text" id="1param8"> 
+							Filter : 
+							<select id="2param8">
+								<option value="date"> HARI INI </option>
+								<option value="month"> BULAN INI </option>
+								<option value="year"> TAHUN INI </option>
+							</select>
+							<br> <br>
+							<button class="tryParams"> COBA </button> <br>
+							<br> RESPONSE : <br>
+							<div id="hasil8"> </div>
+						</div>
+						
+						
+						<br>
+						<div class="row url" kode="9" style="padding-left: 20px; padding-right: 20px;">
+							<div class="col-1 method_get text-center">
+								<a href="#" class="method white">GET</a>
+							</div>
+							<div class="col-11 path_get">
+								<a href="#" class="tag white">/api/workout/log/{id}/{filter}</a>
+							</div>
+						</div>
+						
+						<div class="tbCoba 9 green" style="display:none">
+							AUTHORIZATION : 
+							<input type="text" id="authorization9" style="width:100%" value="Bearer "> <br> <br>
+							ID : <input type="text" id="1param9"> 
+							Filter : 
+							<select id="2param9">
+								<option value="date"> HARI INI </option>
+								<option value="month"> BULAN INI </option>
+								<option value="year"> TAHUN INI </option>
+							</select>
+							<br> <br>
+							<button class="tryParams"> COBA </button> <br>
+							<br> RESPONSE : <br>
+							<div id="hasil9"> </div>
+						</div>
+						
 				</div>   
 		</div>
 		
@@ -288,7 +376,13 @@
 			ajax({},token);
 		});
 		
-		
+		$(".tryParams").click(function(){
+			var token = $("#authorization"+kode).val();
+			var param1 = $("#1param"+kode).val();
+			var param2 = $("#2param"+kode).val();
+			reqUrl = tempUrl + param1 + "/" + param2;
+			ajax({},token);
+		});
 		
 	});
 </script>
