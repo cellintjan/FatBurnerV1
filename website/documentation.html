@@ -1,5 +1,88 @@
 <!doctype html>
 <html lang="en">
+<style type="text/css">
+    a {
+        color: black !important;
+    }
+    * {
+  box-sizing: border-box;
+}
+
+body {
+  font: 16px Arial;  
+}
+
+/*the container must be positioned relative:*/
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+input {
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+input[type=submit] {
+  background-color: DodgerBlue;
+  color: #fff;
+  cursor: pointer;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
+
+.tocify-wrapper {
+    transition: left 0.3s ease-in-out;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 30;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 230px;
+    background-color: #e9e9e9;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+</style>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -7,236 +90,213 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Fontfaces CSS-->
+    <link href="css/font-face.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <!-- Vendor CSS-->
+    <link href="vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="css/theme.css" rel="stylesheet" media="all">
     
-    <title>Home</title>
+    <title>Documentation</title>
 </head>
-<body>    
-    <div class="container-fluid" style="padding: 0px">
-        <!-- navbar -->
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active" href="home.html">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="#">APIs</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="documentation.html">Documentation</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="pricing.html">Pricing</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-            </li>
-        </ul>
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
-                <h2>Overview of Fat Secret APIs</h2>
-            <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th scope="col-2">Method</th>
-                    <th scope="col-2">Endpoint</th>
-                    <th scope="col-2">Description</th>
-                    <th scope="col-2">Header</th>
-                    <th scope="col-2">Request</th>
-                    <th scope="col-2">Response</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>POST</td>
-                    <td>/login</td>
-                    <td>Login service</td>
-                    <td></td>
-                    <td> <pre>
-{
-    "email":"rui@yahoo.com",
-    "password":"123"
-}                      </pre>
-                    </td>
-                    <td>Response</td>
-                </tr>
-                <tr>
-                    <td>GET</td>
-                    <td>/api/foods</td>
-                    <td>Get Food</td>
-                    <td>Authorization</td>
-                    <td></td>
-                    <td>Response</td>
-                </tr>
-                <tr>
-                    <td>GET</td>
-                    <td>/api/food</td>
-                    <td>Get Food Specifically</td>
-                    <td>Authorization</td>
-                    <td></td>
-                    <td>Response</td>
-                </tr>
-                <tr>
-                    <td>GET</td>
-                    <td>/api/food/Minuman</td>
-                    <td>Get Minuman</td>
-                    <td>Authorization</td>
-                    <td></td>
-                    <td>Response</td>
-                </tr>
-                <tr>
-                    <td>POST</td>
-                    <td>/api/food/log/insert</td>
-                    <td>Insert Log Food</td>
-                    <td>Authorization</td>
-                    <td>
-<pre>
-{
-	"id_user":3,
-	"id_food":2,
-	"tipe":"breakfast",
-	"satuan":5
-}
-</pre>
-                    </td>
-                    <td>Response</td>
-                </tr>
-                <tr>
-                    <td>POST</td>
-                    <td>/api/food/log/update/16</td>
-                    <td>Update</td>
-                    <td>Authorization</td>
-                    <td>
-<pre>
-{
-	"satuan":3
-}
-</pre>
-                    </td>
-                    <td>Response</td>
-                </tr>
-                <tr>
-                    <td>DEL</td>
-                    <td>/api/food/log/delete/16</td>
-                    <td>Delete food</td>
-                    <td>Authorization</td>
-                    <td></td>
-                    <td>Response</td>
-                </tr>
-                <!-- workout-->
-                <tr>
-                    <td>GET</td>
-                    <td>/api/workouts</td>
-                    <td>Get workout</td>
-                    <td>Authorization</td>
-                    <td></td>
-                    <td>Response</td>
-                </tr>
-                <tr>
-                    <td>POST</td>
-                    <td>/api/workout/log/insert</td>
-                    <td>Insert workout</td>
-                    <td>Authorization</td>
-                    <td>
-<pre>
-{
-	"id_user":3,
-	"id_workout":7,
-	"waktu":30
-}
-</pre>                    
-                    </td>
-                    <td>Response</td>
-                </tr>
-                <tr>
-                    <td>POST</td>
-                    <td>/api/workout/log/update/8</td>
-                    <td>Update workout</td>
-                    <td>Authorization</td>
-                    <td>
-<pre>
-{
-    "waktu":45
-}
-</pre>                    
-                    </td>
-                    <td>Response</td>
-                </tr>
-                <tr>
-                    <td>DEL</td>
-                    <td>/api/workout/log/delete/8</td>
-                    <td>Delete workout</td>
-                    <td>Authorization</td>
-                    <td></td>
-                    <td>Response</td>
-                </tr>
-                <tr>
-                    <td>GET</td>
-                    <td>/api/articles</td>
-                    <td>Get artikel</td>
-                    <td>Authorization</td>
-                    <td></td>
-                    <td>Response</td>
-                </tr>
-                <tr>
-                    <td>POST</td>
-                    <td>/api/article/insert</td>
-                    <td>Insert artikel</td>
-                    <td>Authorization</td>
-                    <td>
-                        <p>{</p>
-                        <p>"user_id":3,</p>
-                        <p>"imageurl":"https://akcdn.detik.net.id/community/media/visual/2019/01/15/892c7f91-e0c1-47a1-a33f-931bc5b46261_169.jpeg?w=700&q=90",</p>
-                        <p>"judul":"Tips Mencegah Ngantuk",</p>
-                        <p>"isi":"Jakarta - Dua hal yang paling sering kita rasakan dan sulit untuk mengatasinya di bulan Ramadhan adalah rasa lapar dan mengantuk. Tak tanggung-tanggung, kadang dua hal ini justru menyerang di pagi hari saat kita seharusnya produktif."</p>
-                        <p>}</p>
-                    </td>
-                    <td>Response</td>
-                </tr>
-                <!--report-->
-                <tr>
-                    <td>GET</td>
-                    <td>/api/workout/log/3/year</td>
-                    <td>Get Report</td>
-                    <td>Authorization</td>
-                    <td></td>
-                    <td>Response</td>
-                </tr>
-                <tr>
-                    <td>GET</td>
-                    <td>/api/food/log/3/year</td>
-                    <td>Get Report</td>
-                    <td>Authorization</td>
-                    <td></td>
-                    <td>Response</td>
-                </tr>
-            </tbody>
-        </table>
+<body>
+    <div class="tocify-wrapper" style="background-color: #f5f5f5">
+        <!-- MENU SIDEBAR-->
+        <aside class="menu-sidebar" style="background-color: #f5f5f5">
+            <div class="logo">
+                <a href="#">
+                    <img src="images/icon/logo.png" alt="Cool Admin"/>
+                </a>
             </div>
-            <div class="col-1"></div>
-        </div>
+            <nav class="navbar-sidebar">
+                <ul class="list-unstyled navbar__list">
+                    <li class="active has-sub">
+                        <a class="js-arrow" href="home.html">
+                            <i class="fas fa-search"></i>Home</a>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-bar-chart-o"></i>APIs</a>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" href="documentation.html">
+                            <i class="fas fa-bar-chart-o"></i>Documentation</a>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" href="pricing.html">
+                            <i class="fas fa-bar-chart-o"></i>Pricing</a>
+                    </li>
+                    <li class="has-sub">
+                        <a class="js-arrow" href="#">
+                            <i class="fas fa-bar-chart-o"></i>About</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <!-- END MENU SIDEBAR-->
+    </div>
         
+    <div class="page-wrapper" style="margin-left: 280px;">
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
-                <table class="table table-bordered">
+            <div class="col-6" style="margin-top: 3%;">
+                <h1>Overview of Fat Burner APIs</h1><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                    <thead>
+                        <tr>
+                            <th scope="col-2">Method</th>
+                            <th scope="col-5">Endpoint</th>
+                            <th scope="col-5">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>POST</td>
+                            <td>/login</td>
+                            <td>Login service</td>
+                        </tr>
+                        <tr>
+                            <td>GET</td>
+                            <td>/api/foods</td>
+                            <td>Get Food</td>
+                        </tr>
+                        <tr>
+                            <td>GET</td>
+                            <td>/api/food</td>
+                            <td>Get Food Specifically</td>
+                        </tr>
+                        <tr>
+                            <td>GET</td>
+                            <td>/api/food/Minuman</td>
+                            <td>Get Minuman</td>
+                        </tr>
+                        <tr>
+                            <td>POST</td>
+                            <td>/api/food/log/insert</td>
+                            <td>Insert Log Food</td>
+                        </tr>
+                        <tr>
+                            <td>POST</td>
+                            <td>/api/food/log/update/16</td>
+                            <td>Update</td>
+                        </tr>
+                        <tr>
+                            <td>DEL</td>
+                            <td>/api/food/log/delete/16</td>
+                            <td>Delete food</td>
+                        </tr>
+                        <!-- workout-->
+                        <tr>
+                            <td>GET</td>
+                            <td>/api/workouts</td>
+                            <td>Get workout</td>
+                        </tr>
+                        <tr>
+                            <td>POST</td>
+                            <td>/api/workout/log/insert</td>
+                            <td>Insert workout</td>
+                        </tr>
+                        <tr>
+                            <td>POST</td>
+                            <td>/api/workout/log/update/8</td>
+                            <td>Update workout</td>
+                        </tr>
+                        <tr>
+                            <td>DEL</td>
+                            <td>/api/workout/log/delete/8</td>
+                            <td>Delete workout</td>
+                        </tr>
+                        <tr>
+                            <td>GET</td>
+                            <td>/api/articles</td>
+                            <td>Get artikel</td>
+                        </tr>
+                        <tr>
+                            <td>POST</td>
+                            <td>/api/article/insert</td>
+                            <td>Insert artikel</td>
+                        </tr>
+                        <!--report-->
+                        <tr>
+                            <td>GET</td>
+                            <td>/api/workout/log/3/year</td>
+                            <td>Get Report</td>
+                        </tr>
+                        <tr>
+                            <td>GET</td>
+                            <td>/api/food/log/3/year</td>
+                            <td>Get Report</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-6" style="background: black;">
+                <div class="row" style="margin: 5%">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6" style="height: 30px;"> </div>
+            <div class="col-6" style="background: black;"></div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <h2>API Login</h2><br>
+                <table class="table table-bordered" style="max-width: 650px;">
                     <tr>
-                        <td><h2>Authentication</h2></td>
+                        <th>Nama Parameter</th>
+                        <th>Tipe Data</th>
+                        <th>Keterangan</th>
                     </tr>
                     <tr>
-                        <td>
-                            <p>Lorem ipsum leorasda sdjlasjdlasiodawjdja sldj alskdlak sjdla sldaj</p>
-                        </td>
+                        <td>email</td>
+                        <td>String</td>
+                        <td>Email akun</td>
+                    </tr>
+                    <tr>
+                        <td>password</td>
+                        <td>String</td>
+                        <td>Password akun</td>
                     </tr>
                 </table>
             </div>
-            <div class="col-1"></div>
+            <div class="col-6" style="background: black;">
+                <div class="row" style="margin: 5%">
+                    <blockquote>
+                        <p>Access Token
+                        <br><br>POST /api/oauth/token</p>
+                    </blockquote>
+                </div>
+            </div>
         </div>
-        
-        
-        <div class="container-fluid" style="background-color: dimgrey;margin-bottom: 0px;height: 60px;">
-            <h2 style="color: white">Copyrights Kelompok SOA 2018-2019</h2>
+        <div class="row">
+            <div class="col-6" style="height: 30px;"> </div>
+            <div class="col-6" style="background: black;"></div>
         </div>
-        
+    </div>
+
+    <div class="page-wrapper" style="margin-left: 230px;">
+        <!-- footer -->
+        <div class="row">
+            <div class="col-12" style="height: 60px; background-color: orange; text-align: center; padding: 16px; color: black">
+                <p><b>@Copyrights Kelompok SOA 2018-2019</b></p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
