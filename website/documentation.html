@@ -465,6 +465,656 @@ input[type=submit] {
             <div class="col-6" style="height: 30px;"> </div>
             <div class="col-6" style="background: black;"></div>
         </div>
+        <div class="row">
+                <div class="col-6">
+                    <br><br><h2>API Insert Log Makan</h2><br>
+                    <p>Untuk melakukan penambahan data log makanan</p><br>
+                    <h4>Request</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>id_user</td>
+                            <td>String</td>
+                            <td>Nomor id user</td>
+                        </tr>
+                        <tr>
+                            <td>id_food</td>
+                            <td>String</td>
+                            <td>Nomor id makanan</td>
+                        </tr>
+                        <tr>
+                            <td>tipe</td>
+                            <td>String</td>
+                            <td>Waktu makan (Breakfast,Lunch,Dinner,Snack)</td>
+                        </tr>
+                        <tr>
+                            <td>satuan</td>
+                            <td>Integer</td>
+                            <td>Berat makanan yang dikonsumsi</td>
+                        </tr>
+                    </table>
+                    <br><h4>Response</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>error</td>
+                            <td>Boolean</td>
+                            <td>Status error</td>
+                        </tr>
+                        <tr>
+                            <td>message</td>
+                            <td>String</td>
+                            <td>Pesan</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-6" style="background: black;">
+                    <div class="row" style="margin: 5%">
+                        <blockquote>
+                            <p>Access Token
+                            <br><br>POST /api/oauth/token</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6" style="height: 30px;"> </div>
+                <div class="col-6" style="background: black;"></div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <br><br><h2>API Update Log Makan</h2><br>
+                    <p>Untuk melakukan update data log makanan</p><br>
+                    <h4>Query string parameters</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>id</td>
+                            <td>String</td>
+                            <td>Nomor id log makanan</td>
+                        </tr>
+                    </table>
+                    <br><h4>Request</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>satuan</td>
+                            <td>int</td>
+                            <td>Berat makanan yang dikonsumsi</td>
+                        </tr>
+                    </table>
+                    <br><h4>Response</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>error</td>
+                            <td>Boolean</td>
+                            <td>Status error</td>
+                        </tr>
+                        <tr>
+                            <td>message</td>
+                            <td>String</td>
+                            <td>Pesan</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-6" style="background: black;">
+                    <div class="row" style="margin: 5%">
+                        <blockquote>
+                            <p>Access Token
+                            <br><br>POST /api/oauth/token</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6" style="height: 30px;"> </div>
+                <div class="col-6" style="background: black;"></div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <br><br><h2>API Delete Log Makan</h2><br>
+                    <p>Untuk melakukan delete data log makanan</p><br>
+                    <h4>Query string parameters</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>id</td>
+                            <td>String</td>
+                            <td>Nomor id log makanan</td>
+                        </tr>
+                    </table>
+                    <br><h4>Response</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>error</td>
+                            <td>Boolean</td>
+                            <td>Status error</td>
+                        </tr>
+                        <tr>
+                            <td>message</td>
+                            <td>String</td>
+                            <td>Pesan</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-6" style="background: black;">
+                    <div class="row" style="margin: 5%">
+                        <blockquote>
+                            <p>Access Token
+                            <br><br>POST /api/oauth/token</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6" style="height: 30px;"> </div>
+                <div class="col-6" style="background: black;"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <br><br><h2>API Workout</h2><br>
+                    <p>Untuk mengambil semua data workout</p><br>
+                    <h4>Response</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>id</td>
+                            <td>String</td>
+                            <td>Nomor id workout</td>
+                        </tr>
+                        <tr>
+                            <td>nama</td>
+                            <td>String</td>
+                            <td>Nama workout</td>
+                        </tr>
+                        <tr>
+                            <td>kalori</td>
+                            <td>String</td>
+                            <td>Jumlah kalori workout</td>
+                        </tr>
+                        <tr>
+                            <td>waktu</td>
+                            <td>String</td>
+                            <td>Lama waktu workout</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-6" style="background: black;">
+                    <div class="row" style="margin: 5%">
+                        <blockquote>
+                            <p>Access Token
+                            <br><br>POST /api/oauth/token</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6" style="height: 30px;"> </div>
+                <div class="col-6" style="background: black;"></div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <br><br><h2>API Insert Log Workout</h2><br>
+                    <p>Untuk melakukan penambahan data log workout</p><br>
+                    <h4>Request</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>id_user</td>
+                            <td>String</td>
+                            <td>Nomor id user</td>
+                        </tr>
+                        <tr>
+                            <td>id_workout</td>
+                            <td>String</td>
+                            <td>Nomor id workout</td>
+                        </tr>
+                        <tr>
+                            <td>waktu</td>
+                            <td>Integer</td>
+                            <td>Lama waktu workout oleh user</td>
+                        </tr>
+                    </table>
+                    <br><h4>Response</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>error</td>
+                            <td>Boolean</td>
+                            <td>Status error</td>
+                        </tr>
+                        <tr>
+                            <td>message</td>
+                            <td>String</td>
+                            <td>Pesan</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-6" style="background: black;">
+                    <div class="row" style="margin: 5%">
+                        <blockquote>
+                            <p>Access Token
+                            <br><br>POST /api/oauth/token</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6" style="height: 30px;"> </div>
+                <div class="col-6" style="background: black;"></div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <br><br><h2>API Update Log Workout</h2><br>
+                    <p>Untuk melakukan update data log workout</p><br>
+                    <h4>Query string parameters</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>id</td>
+                            <td>String</td>
+                            <td>Nomor id log workout</td>
+                        </tr>
+                    </table>
+                    <br><h4>Request</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>waktu</td>
+                            <td>int</td>
+                            <td>Lama waktu workout oleh user</td>
+                        </tr>
+                    </table>
+                    <br><h4>Response</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>error</td>
+                            <td>Boolean</td>
+                            <td>Status error</td>
+                        </tr>
+                        <tr>
+                            <td>message</td>
+                            <td>String</td>
+                            <td>Pesan</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-6" style="background: black;">
+                    <div class="row" style="margin: 5%">
+                        <blockquote>
+                            <p>Access Token
+                            <br><br>POST /api/oauth/token</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6" style="height: 30px;"> </div>
+                <div class="col-6" style="background: black;"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <br><br><h2>API Delete Log Workout</h2><br>
+                    <p>Untuk melakukan delete data log workout</p><br>
+                    <h4>Query string parameters</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>id</td>
+                            <td>String</td>
+                            <td>Nomor id log workout</td>
+                        </tr>
+                    </table>
+                    <br><h4>Response</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>error</td>
+                            <td>Boolean</td>
+                            <td>Status error</td>
+                        </tr>
+                        <tr>
+                            <td>message</td>
+                            <td>String</td>
+                            <td>Pesan</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-6" style="background: black;">
+                    <div class="row" style="margin: 5%">
+                        <blockquote>
+                            <p>Access Token
+                            <br><br>POST /api/oauth/token</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6" style="height: 30px;"> </div>
+                <div class="col-6" style="background: black;"></div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <br><br><h2>API Artikel</h2><br>
+                    <p>Untuk mengambil semua data artikel</p><br>
+                    <h4>Response</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>artikelid</td>
+                            <td>String</td>
+                            <td>Nomor id artikel</td>
+                        </tr>
+                        <tr>
+                            <td>nama</td>
+                            <td>String</td>
+                            <td>Judul artikel</td>
+                        </tr>
+                        <tr>
+                            <td>imageurl</td>
+                            <td>String</td>
+                            <td>Link gambar artikel</td>
+                        </tr>
+                        <tr>
+                            <td>datecreated</td>
+                            <td>String</td>
+                            <td>Tanggal pembuatan artikel</td>
+                        </tr>
+                        <tr>
+                            <td>isi</td>
+                            <td>String</td>
+                            <td>Isi Artikel</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-6" style="background: black;">
+                    <div class="row" style="margin: 5%">
+                        <blockquote>
+                            <p>Access Token
+                            <br><br>POST /api/oauth/token</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6" style="height: 30px;"> </div>
+                <div class="col-6" style="background: black;"></div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <br><br><h2>API Insert Artikel</h2><br>
+                    <p>Untuk menambahkan artikel baru</p><br>
+                    <h4>Request</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>user_id</td>
+                            <td>String</td>
+                            <td>Nomor id user</td>
+                        </tr>
+                        <tr>
+                            <td>imageurl</td>
+                            <td>String</td>
+                            <td>Link image untuk artikel</td>
+                        </tr>
+                        <tr>
+                            <td>judul</td>
+                            <td>String</td>
+                            <td>Judul artikel</td>
+                        </tr>
+                        <tr>
+                            <td>isi</td>
+                            <td>String</td>
+                            <td>Isi Artikel</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-6" style="background: black;">
+                    <div class="row" style="margin: 5%">
+                        <blockquote>
+                            <p>Access Token
+                            <br><br>POST /api/oauth/token</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6" style="height: 30px;"> </div>
+                <div class="col-6" style="background: black;"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <br><br><h2>API Report Workout</h2><br>
+                    <p>Untuk mendapatkan laporan tentang workout yang telah dilakukan</p><br>
+                    <h4>Query string parameters</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>id</td>
+                            <td>String</td>
+                            <td>Nomor id user</td>
+                        </tr>
+                        <tr>
+                            <td>filter</td>
+                            <td>String</td>
+                            <td>Kurun waktu (date,month,year)</td>
+                        </tr>
+                    </table>
+                    <br><h4>Response</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>id_log</td>
+                            <td>String</td>
+                            <td>Nomor id log workout</td>
+                        </tr>
+                        <tr>
+                            <td>nama</td>
+                            <td>String</td>
+                            <td>Nama workout</td>
+                        </tr>
+                        <tr>
+                            <td>tanggal</td>
+                            <td>String</td>
+                            <td>Tanggal workout</td>
+                        </tr>
+                        <tr>
+                            <td>waktu_workout</td>
+                            <td>String</td>
+                            <td>Total waktu workout user</td>
+                        </tr>
+                        <tr>
+                            <td>waktu_def</td>
+                            <td>String</td>
+                            <td>Waktu workout dari sistem</td>
+                        </tr>
+                        <tr>
+                            <td>kalori</td>
+                            <td>Integer</td>
+                            <td>Jumlah kalori</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-6" style="background: black;">
+                    <div class="row" style="margin: 5%">
+                        <blockquote>
+                            <p>Access Token
+                            <br><br>POST /api/oauth/token</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6" style="height: 30px;"> </div>
+                <div class="col-6" style="background: black;"></div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                    <br><br><h2>API Report Makanan</h2><br>
+                    <p>Untuk mendapatkan laporan tentang makanan yang telah dikonsumsi</p><br>
+                    <h4>Query string parameters</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>id</td>
+                            <td>String</td>
+                            <td>Nomor id user</td>
+                        </tr>
+                        <tr>
+                            <td>filter</td>
+                            <td>String</td>
+                            <td>Kurun waktu (date,month,year)</td>
+                        </tr>
+                    </table>
+                    <br><h4>Response</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>id_log</td>
+                            <td>String</td>
+                            <td>Nomor id log makanan</td>
+                        </tr>
+                        <tr>
+                            <td>nama</td>
+                            <td>String</td>
+                            <td>Nama makanan</td>
+                        </tr>
+                        <tr>
+                            <td>tipe</td>
+                            <td>String</td>
+                            <td>Waktu makan (Breakfast,Lunch,Dinner,Snack)</td>
+                        </tr>
+                        <tr>
+                            <td>tanggal</td>
+                            <td>String</td>
+                            <td>Tanggal makan</td>
+                        </tr>
+                        <tr>
+                            <td>jumlah</td>
+                            <td>String</td>
+                            <td>Jumlah porsi yang dikonsumsi</td>
+                        </tr>
+                        <tr>
+                            <td>satuan</td>
+                            <td>String</td>
+                            <td>Satuan porsi</td>
+                        </tr>
+                        <tr>
+                            <td>kalori</td>
+                            <td>String</td>
+                            <td>Jumlah kalori</td>
+                        </tr>
+                        <tr>
+                            <td>berat</td>
+                            <td>String</td>
+                            <td>Berat makanan yang dikonsumsi</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-6" style="background: black;">
+                    <div class="row" style="margin: 5%">
+                        <blockquote>
+                            <p>Access Token
+                            <br><br>POST /api/oauth/token</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6" style="height: 30px;"> </div>
+                <div class="col-6" style="background: black;"></div>
+            </div>
     </div>
 
     
