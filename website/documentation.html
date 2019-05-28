@@ -257,6 +257,8 @@ input[type=submit] {
         <div class="row">
             <div class="col-6">
                 <h2>API Login</h2><br>
+                <p>Untuk melakukan autentikasi user</p><br>
+                <h4>Request</h4><br>
                 <table class="table table-bordered" style="max-width: 650px;">
                     <tr>
                         <th>Nama Parameter</th>
@@ -274,6 +276,181 @@ input[type=submit] {
                         <td>Password akun</td>
                     </tr>
                 </table>
+                <br><h4>Response</h4><br>
+                <table class="table table-bordered" style="max-width: 650px;">
+                    <tr>
+                        <th>Nama Parameter</th>
+                        <th>Tipe Data</th>
+                        <th>Keterangan</th>
+                    </tr>
+                    <tr>
+                        <td>error</td>
+                        <td>Boolean</td>
+                        <td>Status error</td>
+                    </tr>
+                    <tr>
+                        <td>token</td>
+                        <td>String</td>
+                        <td>Token</td>
+                    </tr>
+                    <tr>
+                        <td>userid</td>
+                        <td>String</td>
+                        <td>Nomor id user</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-6" style="background: black;">
+                <div class="row" style="margin: 5%">
+                    <blockquote>
+                        <p>Access Token
+                        <br><br>POST /api/oauth/token</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                <div class="col-6">
+                    <br><br><h2>API Makanan</h2><br>
+                    <p>Untuk mengambil semua data makanan</p><br>
+                    <h4>Response</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>id</td>
+                            <td>String</td>
+                            <td>Nomor id makanan</td>
+                        </tr>
+                        <tr>
+                            <td>kategori</td>
+                            <td>String</td>
+                            <td>Nama kategori makanan</td>
+                        </tr>
+                        <tr>
+                            <td>nama</td>
+                            <td>String</td>
+                            <td>Nama makanan</td>
+                        </tr>
+                        <tr>
+                            <td>kalori</td>
+                            <td>String</td>
+                            <td>Jumlah kalori makanan</td>
+                        </tr>
+                        <tr>
+                            <td>satuan</td>
+                            <td>String</td>
+                            <td>Satuan makanan</td>
+                        </tr>
+                        <tr>
+                            <td>berat</td>
+                            <td>Integer</td>
+                            <td>Berat makanan</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-6" style="background: black;">
+                    <div class="row" style="margin: 5%">
+                        <blockquote>
+                            <p>Access Token
+                            <br><br>POST /api/oauth/token</p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-6" style="height: 30px;"> </div>
+            <div class="col-6" style="background: black;"></div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <br><br><h2>API Kategori Makanan</h2><br>
+                <p>Untuk mengambil semua data kategori makanan</p><br>
+                <h4>Response</h4><br>
+                <table class="table table-bordered" style="max-width: 650px;">
+                    <tr>
+                        <th>Nama Parameter</th>
+                        <th>Tipe Data</th>
+                        <th>Keterangan</th>
+                    </tr>
+                    <tr>
+                        <td>kategori</td>
+                        <td>String</td>
+                        <td>Nama kategori makanan</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-6" style="background: black;">
+                <div class="row" style="margin: 5%">
+                    <blockquote>
+                        <p>Access Token
+                        <br><br>POST /api/oauth/token</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6" style="height: 30px;"> </div>
+            <div class="col-6" style="background: black;"></div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <br><br><h2>API Cari Makanan</h2><br>
+                <p>Untuk melakukan pencarian makanan berdasarkan input dari user</p><br>
+                <h4>Query string parameters</h4><br>
+                <table class="table table-bordered" style="max-width: 650px;">
+                    <tr>
+                        <th>Nama Parameter</th>
+                        <th>Tipe Data</th>
+                        <th>Keterangan</th>
+                    </tr>
+                    <tr>
+                        <td>keyword</td>
+                        <td>String</td>
+                        <td>Kata kunci</td>
+                    </tr>
+                </table>
+                <br><h4>Response</h4><br>
+                <table class="table table-bordered" style="max-width: 650px;">
+                    <tr>
+                        <th>Nama Parameter</th>
+                        <th>Tipe Data</th>
+                        <th>Keterangan</th>
+                    </tr>
+                    <tr>
+                        <td>id</td>
+                        <td>String</td>
+                        <td>Nomor id makanan</td>
+                    </tr>
+                    <tr>
+                        <td>kategori</td>
+                        <td>String</td>
+                        <td>Nama kategori makanan</td>
+                    </tr>
+                    <tr>
+                        <td>nama</td>
+                        <td>String</td>
+                        <td>Nama makanan</td>
+                    </tr>
+                    <tr>
+                        <td>kalori</td>
+                        <td>String</td>
+                        <td>Jumlah kalori makanan</td>
+                    </tr>
+                    <tr>
+                        <td>satuan</td>
+                        <td>String</td>
+                        <td>Satuan makanan</td>
+                    </tr>
+                    <tr>
+                        <td>berat</td>
+                        <td>Integer</td>
+                        <td>Berat makanan</td>
+                    </tr>
+                </table>
             </div>
             <div class="col-6" style="background: black;">
                 <div class="row" style="margin: 5%">
@@ -289,6 +466,8 @@ input[type=submit] {
             <div class="col-6" style="background: black;"></div>
         </div>
     </div>
+
+    
 
     <div class="page-wrapper" style="margin-left: 230px;">
         <!-- footer -->
