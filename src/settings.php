@@ -19,14 +19,14 @@ return [
 				// Database setting
 				'db' => [
             'host' => 'localhost',
-            'dbname' => 'fatburner',
-            'user' => 'root',
-						'pass' => '',
+            'dbname' => 'u346426447_piku',
+            'user' => 'u346426447_piku',
+						'pass' => 'techno2019',
         ],
 				
 				// Add lib jwt auth
 				'jwt' => [
-            'secret' => 'supersecretkeyforsoaclass',
+            'secret' => 'topsecretagent',
         ],
     ],
 ];
