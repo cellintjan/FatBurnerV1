@@ -171,6 +171,11 @@ input[type=submit] {
                             <td>Login</td>
                         </tr>
                         <tr>
+                            <td>POST</td>
+                            <td>/register</td>
+                            <td>Register</td>
+                        </tr>
+                        <tr>
                             <td>GET</td>
                             <td>/api/foods/[{apikey}]</td>
                             <td>Mendapatkan semua makanan</td>
@@ -230,6 +235,16 @@ input[type=submit] {
                             <td>POST</td>
                             <td>/api/article/insert</td>
                             <td>Menambah artikel</td>
+                        </tr>
+                        <tr>
+                            <td>POST</td>
+                            <td>/api/article/update/{id_article}</td>
+                            <td>Mengubah artikel</td>
+                        </tr>
+                        <tr>
+                            <td>DEL</td>
+                            <td>/api/article/delete/{id_article}/[{apikey}]</td>
+                            <td>Menghapus artikel</td>
                         </tr>
                         <!--report-->
                         <tr>
@@ -342,6 +357,128 @@ input[type=submit] {
          <span class="nt">"name"</span><span class="p">:</span><span class="s2">"Rui Fernando"</span>
     <span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
+</span></code> </pre>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <br><br><h2>API Register</h2><br>
+                <p>Untuk register user baru</p><br>
+                <h4>Request</h4><br>
+                <table class="table table-bordered" style="max-width: 650px;">
+                    <tr>
+                        <th>Nama Parameter</th>
+                        <th>Tipe Data</th>
+                        <th>Keterangan</th>
+                    </tr>
+                    <tr>
+                        <td>email</td>
+                        <td>String</td>
+                        <td>Email akun</td>
+                    </tr>
+                    <tr>
+                        <td>password</td>
+                        <td>String</td>
+                        <td>Password akun</td>
+                    </tr>
+                    <tr>
+                        <td>name</td>
+                        <td>String</td>
+                        <td>Nama user</td>
+                    </tr>
+                    <tr>
+                        <td>goal</td>
+                        <td>int</td>
+                        <td>Goal user</td>
+                    </tr>
+                    <tr>
+                        <td>gender</td>
+                        <td>int</td>
+                        <td>Jenis kelamin user</td>
+                    </tr>
+                    <tr>
+                        <td>weight</td>
+                        <td>int</td>
+                        <td>Berat badan user</td>
+                    </tr>
+                    <tr>
+                        <td>height</td>
+                        <td>int</td>
+                        <td>Tinggi badan user</td>
+                    </tr>
+                    <tr>
+                        <td>tipe</td>
+                        <td>String</td>
+                        <td>Tipe request</td>
+                    </tr>
+                    <tr>
+                        <td>bloodsugar</td>
+                        <td>int</td>
+                        <td>Kadar gula darah</td>
+                    </tr>
+                    <tr>
+                        <td>cholesterol</td>
+                        <td>int</td>
+                        <td>Kadar kolestrol</td>
+                    </tr>
+                    <tr>
+                        <td>calorie</td>
+                        <td>int</td>
+                        <td>Konsumsi kalori per hari</td>
+                    </tr>
+                </table>
+                <br><h4>Response</h4><br>
+                <table class="table table-bordered" style="max-width: 650px;">
+                    <tr>
+                        <th>Nama Parameter</th>
+                        <th>Tipe Data</th>
+                        <th>Keterangan</th>
+                    </tr>
+                    <tr>
+                        <td>error</td>
+                        <td>Boolean</td>
+                        <td>Status error</td>
+                    </tr>
+                    <tr>
+                        <td>message</td>
+                        <td>String</td>
+                        <td>Pesan</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-6" style="background: black;">
+                <!-- Request -->
+                <br><br><blockquote>
+                    <p>Access Token
+                    <br><br>POST /register</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"><code> <span class="nf">POST</span> <span class="nn">/register</span>
+ <span class="na">Host</span><span class="p">:</span> <span class="s">http://www.pikukupikumu.com/fat/public/register</span> 
+ <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span> 
+ <span class="na">Data</span><span class="p">:</span> 
+    <span class="na">Email</span><span class="p">:</span> <span class="s">kevin18@gmail.com</span>
+    <span class="na">Password</span><span class="p">:</span> <span class="s">kev123</span>
+    <span class="na">Name</span><span class="p">:</span> <span class="s">Kevin Putra</span>
+    <span class="na">Goal</span><span class="p">:</span> <span class="s">1</span>
+    <span class="na">Gender</span><span class="p">:</span> <span class="s">1</span>
+    <span class="na">Weight</span><span class="p">:</span> <span class="s">67</span>
+    <span class="na">Height</span><span class="p">:</span> <span class="s">165</span>
+    <span class="na">Tipe</span><span class="p">:</span> <span class="s">Gold</span>
+    <span class="na">Bloodsugar</span><span class="p">:</span> <span class="s">100</span>
+    <span class="na">Cholesterol</span><span class="p">:</span> <span class="s">130</span>
+    <span class="na">Calorie</span><span class="p">:</span> <span class="s">2500</span> </code></pre> 
+                </div>
+                <!-- Response -->
+                <blockquote class="response">
+                    <p>Response :</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"> <code><span class="p">{</span><span class="w">
+</span><span class="nt">"error"</span><span class="p">:</span><span class="s2">false</span><span class="p">,</span><span class="w">
+</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"Register Success"</span>
+ <span class="p">}</span><span class="w">
 </span></code> </pre>
                 </div>
             </div>
@@ -1367,10 +1504,168 @@ input[type=submit] {
                 </div>
             </div>
             <div class="row">
+                <div class="col-6">
+                    <br><br><h2>API Update Artikel</h2><br>
+                    <p>Untuk melakukan update data artikel</p><br>
+                    <h4>Query string parameters</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>id</td>
+                            <td>String</td>
+                            <td>Nomor id artikel</td>
+                        </tr>
+                    </table>
+                    <br><h4>Request</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>judul</td>
+                            <td>String</td>
+                            <td>Judul artikel yang baru</td>
+                        </tr>
+                        <tr>
+                            <td>isi</td>
+                            <td>String</td>
+                            <td>Isi artikel yang baru</td>
+                        </tr>
+                        <tr>
+                            <td>apikey</td>
+                            <td>int</td>
+                            <td>API key</td>
+                        </tr>
+                    </table>
+                    <br><h4>Response</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>error</td>
+                            <td>Boolean</td>
+                            <td>Status error</td>
+                        </tr>
+                        <tr>
+                            <td>message</td>
+                            <td>String</td>
+                            <td>Pesan</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-6" style="background: black;">
+                    <br><br>
+                    <!-- Request -->
+                <blockquote>
+                    <p>Update Artikel
+                    <br><br>POST /api/article/update/{id}</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"><code> <span class="nf">POST</span> <span class="nn">/api/article/update/35</span>
+ <span class="na">Host</span><span class="p">:</span> <span class="s">http://www.pikukupikumu.com/fat/public/api/article/update/35</span> 
+ <span class="na">Content-Type</span><span class="p">:</span> <span class="s">application/json</span> 
+ <span class="na">Authorization</span><span class="p">:</span> <span class="s">Baerar {token}</span> 
+ <span class="na">Data</span><span class="p">:</span> 
+    <span class="na">"judul"</span><span class="p">:</span> <span class="s">"Tips memasak brokoli"</span>
+    <span class="na">"isi"</span><span class="p">:</span> <span class="s">"Pertama, bersihkan terlebih dahulu...."</span>
+    <span class="na">"apikey"</span><span class="p">:</span> <span class="s">12345</span></code></pre> 
+                </div>
+                <!-- Response -->
+                <blockquote class="response">
+                    <p>Response :</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"> <code><span class="p">{</span><span class="w">
+</span><span class="nt">"error"</span><span class="p">:</span><span class="s2">false</span><span class="p">,</span><span class="w">
+</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"Update Success"</span>
+ <span class="w"></span><span class="p">}</span><span class="w">
+</span></code> </pre>
+                </div>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-6" style="height: 30px;"> </div>
                 <div class="col-6" style="background: black;"></div>
             </div>
-
+            <div class="row">
+                <div class="col-6">
+                    <br><br><h2>API Delete Article</h2><br>
+                    <p>Untuk melakukan delete data article</p><br>
+                    <h4>Query string parameters</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>id</td>
+                            <td>String</td>
+                            <td>Nomor id article</td>
+                        </tr>
+                        <tr>
+                            <td>apikey</td>
+                            <td>int</td>
+                            <td>API Key</td>
+                        </tr>
+                    </table>
+                    <br><h4>Response</h4><br>
+                    <table class="table table-bordered" style="max-width: 650px;">
+                        <tr>
+                            <th>Nama Parameter</th>
+                            <th>Tipe Data</th>
+                            <th>Keterangan</th>
+                        </tr>
+                        <tr>
+                            <td>error</td>
+                            <td>Boolean</td>
+                            <td>Status error</td>
+                        </tr>
+                        <tr>
+                            <td>message</td>
+                            <td>String</td>
+                            <td>Pesan</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="col-6" style="background: black;">
+                    <br><br>
+                    <!-- Request -->
+                <blockquote>
+                    <p>Delete Article
+                    <br><br>DEL /api/article/delete/{id}/[{apikey}]</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"><code> <span class="nf">DEL</span> <span class="nn">/api/article/delete/37/12345</span>
+ <span class="na">Host</span><span class="p">:</span> <span class="s">http://www.pikukupikumu.com/fat/public/api/article/delete/37/12345</span> 
+ <span class="na">Authorization</span><span class="p">:</span> <span class="s">Bearer {token}</span> </code></pre> 
+                </div>
+                <!-- Response -->
+                <blockquote class="response">
+                    <p>Response :</p>
+                </blockquote>
+                <div style="margin-left: 5%; margin-right: 5%; margin-top: 5%">
+                    <pre class="highlight http" style="display: block;"> <code><span class="p">{</span><span class="w">
+</span><span class="nt">"error"</span><span class="p">:</span><span class="s2">true</span><span class="p">,</span><span class="w">
+</span><span class="nt">"message"</span><span class="p">:</span><span class="s2">"Delete Failed"</span>
+ <span class="w"></span><span class="p">}</span><span class="w">
+</span></code> </pre>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6" style="height: 30px;"> </div>
+                <div class="col-6" style="background: black;"></div>
+            </div>
             <div class="row">
                 <div class="col-6">
                     <br><br><h2>API Report Workout</h2><br>
