@@ -7,7 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="/FatBurnerV1/website/jquery-3.2.1.min.js"> </script>
+    <script src="jquery-3.2.1.min.js"> </script>
 		
     <link rel="shortcut icon" href="images/logo.ico" />
     <title>Test API</title>
@@ -72,7 +72,7 @@
             <!-- navbar -->
             <ul class="nav justify-content-end">
                 <li class="nav-item">
-                    <a class="nav-link" href="home.html">Home</a>
+                    <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="testAPI.html">APIs</a>
@@ -133,7 +133,7 @@
 								<a href="#" class="method white">GET</a>
 							</div>
 							<div class="col-11 path_get">
-								<a href="#" class="tag white">/api/foods</a>
+								<a href="#" class="tag white">/api/foods/{apikey}</a>
 							</div>
 						</div>
 						
@@ -141,6 +141,8 @@
 							<div class="form-group">
 								<label for="authorization1">AUTHORIZATION: </label>
 								<input type="text" class="form-control" id="authorization1" value="Bearer ">
+								<label for="apikey1">Api Key: </label>
+								<input type="text" class="form-control" id="apikey1">
 							</div>
 							<button class="try btn btn-success"> COBA </button> <br>
 							<br> RESPONSE : <br>
@@ -154,7 +156,7 @@
 								<a href="#" class="method white">GET</a>
 							</div>
 							<div class="col-11 path_get">
-								<a href="#" class="tag white">/api/food</a>
+								<a href="#" class="tag white">/api/food/{apikey}</a>
 							</div>
 						</div>
 						
@@ -162,6 +164,8 @@
 							<div class="form-group">
 								<label for="authorization2">AUTHORIZATION: </label>
 								<input type="text" class="form-control" id="authorization2" value="Bearer ">
+								<label for="apikey2">Api Key: </label>
+								<input type="text" class="form-control" id="apikey2">
 							</div>
 							<button class="try btn btn-success"> COBA </button> <br>
 							<br> RESPONSE : <br>
@@ -175,7 +179,7 @@
 								<a href="#" class="method white">GET</a>
 							</div>
 							<div class="col-11 path_get">
-								<a href="#" class="tag white">/api/food/{category}</a>
+								<a href="#" class="tag white">/api/food/{category}/{apikey}</a>
 							</div>
 						</div>
 						
@@ -183,6 +187,8 @@
 							<div class="form-group">
 								<label for="authorization5">AUTHORIZATION: </label>
 								<input type="text" class="form-control" id="authorization5" value="Bearer ">
+								<label for="apikey5">Api Key: </label>
+								<input type="text" class="form-control" id="apikey5">
 							</div>
 							<div class="form-inline">
 								<label for="param5">Category: </label>
@@ -200,7 +206,7 @@
 								<a href="#" class="method white">GET</a>
 							</div>
 							<div class="col-11 path_get">
-								<a href="#" class="tag white">/api/workouts</a>
+								<a href="#" class="tag white">/api/workouts/{apikey}</a>
 							</div>
 						</div>
 						
@@ -208,6 +214,8 @@
 							<div class="form-group">
 								<label for="authorization3">AUTHORIZATION: </label>
 								<input type="text" class="form-control" id="authorization3" value="Bearer ">
+								<label for="apikey3">Api Key: </label>
+								<input type="text" class="form-control" id="apikey3">
 							</div>
 							<button class="try btn btn-success"> COBA </button> <br>
 							<br> RESPONSE : <br>
@@ -225,26 +233,111 @@
 							</div>
 						</div>
 						
-						<div class="tbCoba 14 blue" status="insert" style="display:none">
-							<div class="form-group">
-								<label for="authorization14">AUTHORIZATION: </label>
-								<input type="text" class="form-control" id="authorization14" value="Bearer ">
+						<form id="formUpload" method="post" enctype="multipart/form-data">
+    						<div class="tbCoba 14 blue" status="insert" style="display:none">
+    							<div class="form-group">
+    								<label for="authorization14">AUTHORIZATION: </label>
+    								<input type="text" class="form-control" id="authorization14" name="authorization" value="Bearer ">
+    								<label for="apikey14">Api Key: </label>
+    								<input type="text" class="form-control" id="apikey14" name="apikey">
+    							</div>
+    							<div class="form-inline">
+    								<label for="user_id14">User_id: </label>
+    								<input type="text" class="form-control mx-sm-3" id="user_id14" name="user_id">
+    								<label for="judul14">Judul: </label>
+    								<input type="text" class="form-control mx-sm-3" id="judul14" name="judul">
+    							</div> <br>
+    							<div class="form-group">
+    								<label for="imageurl14">ImageURL: </label>
+                                    <input type="file" class="form-control-file" id="imageurl14" name="imageurl"> <br>
+    								<label for="isi14">Isi:</label>
+    								<textarea class="form-control" rows="5" id="isi14" name="isi"></textarea>
+    							</div>
+    							<button class="tryUpload btn btn-primary"> COBA </button> <br>
+    							<br> RESPONSE : <br>
+    							<div id="hasil14"> </div>
+    						</div>
+						</form>
+						
+						
+						<br>
+						<div class="row url" kode="18" style="padding-left: 20px; padding-right: 20px;">
+							<div class="col-1 method_post text-center">
+								<a href="#" class="method white">POST</a>
 							</div>
-							<div class="form-inline">
-								<label for="user_id14">User_id: </label>
-								<input type="text" class="form-control mx-sm-3" id="user_id14">
-								<label for="judul14">Judul: </label>
-								<input type="text" class="form-control mx-sm-3" id="judul14">
+							<div class="col-11 path_post">
+								<a href="#" class="tag white">/api/article/update/{id}</a>
+							</div>
+						</div>
+						
+						<div class="tbCoba 18 blue" status="update" style="display:none">
+							<div class="form-group">
+								<label for="authorization18">AUTHORIZATION: </label>
+								<input type="text" class="form-control" id="authorization18" value="Bearer ">
+								<label for="apikey18">Api Key: </label>
+								<input type="text" class="form-control" id="apikey18">
+							    <label for="id_log18">ID: </label>
+								<input type="text" class="form-control" id="id_log18">
+								<label for="judul18">Judul: </label>
+								<input type="text" class="form-control" id="judul18">
+								<label for="isi18">Isi:</label>
+								<textarea class="form-control" rows="5" id="isi18"></textarea>
 							</div> <br>
-							<div class="form-group">
-								<label for="imageurl14">ImageURL: </label>
-								<input type="text" class="form-control" id="imageurl14"> <br>
-								<label for="isi14">Isi:</label>
-								<textarea class="form-control" rows="5" id="isi14"></textarea>
-							</div>
 							<button class="tryMany btn btn-primary"> COBA </button> <br>
 							<br> RESPONSE : <br>
-							<div id="hasil14"> </div>
+							<div id="hasil18"> </div>
+						</div>
+						
+						
+						<br>
+						<div class="row url" kode="17" style="padding-left: 20px; padding-right: 20px;">
+							<div class="col-1 method_del text-center">
+								<a href="#" class="method white">DELETE</a>
+							</div>
+							<div class="col-11 path_del">
+								<a href="#" class="tag white">/api/article/delete/{id}/{apikey}</a>
+							</div>
+						</div>
+						
+						<div class="tbCoba 17 red" style="display:none">
+							<div class="form-group">
+								<label for="authorization17">AUTHORIZATION: </label>
+								<input type="text" class="form-control" id="authorization17" value="Bearer ">
+								<label for="apikey17">Api Key: </label>
+								<input type="text" class="form-control" id="apikey17">
+							</div>
+							<div class="form-inline">
+								<label for="param17">ID: </label>
+								<input type="text" class="form-control mx-sm-3" id="param17">
+							</div> <br>
+							<button class="tryParam btn btn-danger"> COBA </button> <br>
+							<br> RESPONSE : <br>
+							<div id="hasil17"> </div>
+						</div>
+						
+						
+						<br>
+						<div class="row url" kode="16" style="padding-left: 20px; padding-right: 20px;">
+							<div class="col-1 method_get text-center">
+								<a href="#" class="method white">GET</a>
+							</div>
+							<div class="col-11 path_get">
+								<a href="#" class="tag white">/api/article/{id}/{apikey}</a>
+							</div>
+						</div>
+						
+						<div class="tbCoba 16 green" style="display:none">
+							<div class="form-group">
+								<label for="authorization16">AUTHORIZATION: </label>
+								<input type="text" class="form-control" id="authorization16" value="Bearer ">
+								<label for="apikey16">Api Key: </label>
+								<input type="text" class="form-control" id="apikey16">
+								<label for="param16">ID: </label>
+								<input type="text" class="form-control" id="param16">
+							</div>
+							<button class="tryParam btn btn-success"> COBA </button> <br>
+							<br> RESPONSE : <br>
+							<div id="hasil16"> </div>
 						</div>
 
 				
@@ -254,7 +347,7 @@
 								<a href="#" class="method white">GET</a>
 							</div>
 							<div class="col-11 path_get">
-								<a href="#" class="tag white">/api/articles</a>
+								<a href="#" class="tag white">/api/articles/{apikey}</a>
 							</div>
 						</div>
 						
@@ -262,6 +355,8 @@
 							<div class="form-group">
 								<label for="authorization4">AUTHORIZATION: </label>
 								<input type="text" class="form-control" id="authorization4" value="Bearer ">
+								<label for="apikey4">Api Key: </label>
+								<input type="text" class="form-control" id="apikey4">
 							</div>
 							<button class="try btn btn-success"> COBA </button> <br>
 							<br> RESPONSE : <br>
@@ -283,6 +378,8 @@
 							<div class="form-group">
 								<label for="authorization10">AUTHORIZATION: </label>
 								<input type="text" class="form-control" id="authorization10" value="Bearer ">
+								<label for="apikey10">Api Key: </label>
+								<input type="text" class="form-control" id="apikey10">
 							</div>
 							<div class="form-inline">
 								<label for="id_user10">Id_user: </label>
@@ -321,6 +418,8 @@
 							<div class="form-group">
 								<label for="authorization11">AUTHORIZATION: </label>
 								<input type="text" class="form-control" id="authorization11" value="Bearer ">
+								<label for="apikey11">Api Key: </label>
+								<input type="text" class="form-control" id="apikey11">
 							</div>
 							<div class="form-inline">
 								<label for="id_log11">Id_log: </label>
@@ -340,7 +439,7 @@
 								<a href="#" class="method white">DELETE</a>
 							</div>
 							<div class="col-11 path_del">
-								<a href="#" class="tag white">/api/food/log/delete/{id_log}</a>
+								<a href="#" class="tag white">/api/food/log/delete/{id_log}/{apikey}</a>
 							</div>
 						</div>
 						
@@ -348,6 +447,8 @@
 							<div class="form-group">
 								<label for="authorization6">AUTHORIZATION: </label>
 								<input type="text" class="form-control" id="authorization6" value="Bearer ">
+								<label for="apikey6">Api Key: </label>
+								<input type="text" class="form-control" id="apikey6">
 							</div>
 							<div class="form-inline">
 								<label for="param6">Id_log: </label>
@@ -373,6 +474,8 @@
 							<div class="form-group">
 								<label for="authorization12">AUTHORIZATION: </label>
 								<input type="text" class="form-control" id="authorization12" value="Bearer ">
+								<label for="apikey12">Api Key: </label>
+								<input type="text" class="form-control" id="apikey12">
 							</div>
 							<div class="form-inline">
 								<label for="id_user12">Id_user: </label>
@@ -404,6 +507,8 @@
 							<div class="form-group">
 								<label for="authorization13">AUTHORIZATION: </label>
 								<input type="text" class="form-control" id="authorization13" value="Bearer ">
+								<label for="apikey13">Api Key: </label>
+								<input type="text" class="form-control" id="apikey13">
 							</div>
 							<div class="form-inline">
 								<label for="id_log13">Id_log: </label>
@@ -423,7 +528,7 @@
 								<a href="#" class="method white">DELETE</a>
 							</div>
 							<div class="col-11 path_del">
-								<a href="#" class="tag white">/api/workout/log/delete/{id_log}</a>
+								<a href="#" class="tag white">/api/workout/log/delete/{id_log}/{apikey}</a>
 							</div>
 						</div>
 						
@@ -431,6 +536,8 @@
 							<div class="form-group">
 								<label for="authorization7">AUTHORIZATION: </label>
 								<input type="text" class="form-control" id="authorization7" value="Bearer ">
+								<label for="apikey7">Api Key: </label>
+								<input type="text" class="form-control" id="apikey7">
 							</div>
 							<div class="form-inline">
 								<label for="param7">Id_log: </label>
@@ -448,7 +555,7 @@
 								<a href="#" class="method white">GET</a>
 							</div>
 							<div class="col-11 path_get">
-								<a href="#" class="tag white">/api/food/log/{id}/{filter}</a>
+								<a href="#" class="tag white">/api/food/log/{id}/{filter}/{apikey}</a>
 							</div>
 						</div>
 						
@@ -456,6 +563,8 @@
 							<div class="form-group">
 								<label for="authorization8">AUTHORIZATION: </label>
 								<input type="text" class="form-control" id="authorization8" value="Bearer ">
+								<label for="apikey8">Api Key: </label>
+								<input type="text" class="form-control" id="apikey8">
 							</div>
 							<div class="form-inline">
 								<label for="1param8">ID: </label>
@@ -479,7 +588,7 @@
 								<a href="#" class="method white">GET</a>
 							</div>
 							<div class="col-11 path_get">
-								<a href="#" class="tag white">/api/workout/log/{id}/{filter}</a>
+								<a href="#" class="tag white">/api/workout/log/{id}/{filter}/{apikey}</a>
 							</div>
 						</div>
 						
@@ -487,6 +596,8 @@
 							<div class="form-group">
 								<label for="authorization9">AUTHORIZATION: </label>
 								<input type="text" class="form-control" id="authorization9" value="Bearer ">
+								<label for="apikey9">Api Key: </label>
+								<input type="text" class="form-control" id="apikey9">
 							</div>
 							<div class="form-inline">
 								<label for="1param9">ID: </label>
@@ -530,8 +641,30 @@
 				xhr.setRequestHeader('Authorization', token);
 			 },
 			 success : function(result) { 
-					 $(".tbCoba."+kode).css("display","block");
-					 $("#hasil"+kode).html("<pre>" + JSON.stringify(result, undefined, 2) + "</pre>");
+					$(".tbCoba."+kode).css("display","block");
+					$("#hasil"+kode).html("<pre>" + JSON.stringify(result, undefined, 2) + "</pre>");
+			 },
+			 error : function(err){
+					var error = err.responseJSON;
+					$("#hasil"+kode).html("<pre>" + JSON.stringify(error, undefined, 2) + "</pre>");
+			 }
+		 }); 
+	}
+	
+	function ajaxUpload(params, token){
+		$.ajax({ 
+			 type : method, 
+			 url : reqUrl, 
+			 data : params,
+             processData: false,
+             contentType: false,
+			 beforeSend: function(xhr){
+				xhr.setRequestHeader('Authorization', token);
+				xhr.setRequestHeader('Enctype', 'multipart/form-data');
+			 },
+			 success : function(result) {
+					$(".tbCoba."+kode).css("display","block");
+					$("#hasil"+kode).html("<pre>" + JSON.stringify(result, undefined, 2) + "</pre>");
 			 },
 			 error : function(err){
 					var error = err.responseJSON;
@@ -557,12 +690,16 @@
 			$("#hasil"+kode).html("");
 		});
 		
-		$(".try").click(function(){
+		$(".try").click(function(e){
+		    e.preventDefault();
 			var token = $("#authorization"+kode).val();
+			var apikey = $("#apikey"+kode).val();
+			reqUrl = tempUrl + apikey;
 			ajax({}, token);
 		});
 		
-		$(".tryLogin").click(function(){
+		$(".tryLogin").click(function(e){
+		    e.preventDefault();
 			var params = {
 				"email" : $("#email0").val(),
 				"password" : $("#pass0").val()
@@ -570,22 +707,27 @@
 			ajax(params,"");
 		});
 		
-		$(".tryParam").click(function(){
+		$(".tryParam").click(function(e){
+		    e.preventDefault();
 			var token = $("#authorization"+kode).val();
+			var apikey =$("#apikey"+kode).val();
 			var param = $("#param"+kode).val();
-			reqUrl = tempUrl + param;
+			reqUrl = tempUrl + param + "/" + apikey;
 			ajax({},token);
 		});
 		
-		$(".tryParams").click(function(){
+		$(".tryParams").click(function(e){
+		    e.preventDefault();
 			var token = $("#authorization"+kode).val();
+			var apikey =$("#apikey"+kode).val();
 			var param1 = $("#1param"+kode).val();
 			var param2 = $("#2param"+kode).val();
-			reqUrl = tempUrl + param1 + "/" + param2;
+			reqUrl = tempUrl + param1 + "/" + param2 + "/" + apikey;
 			ajax({},token);
 		});
 		
-		$(".tryMany").click(function(){
+		$(".tryMany").click(function(e){
+		    e.preventDefault();
 			var token = $("#authorization"+kode).val();
 			var params = {
 				"id_user" : $("#id_user"+kode).val(),
@@ -594,15 +736,33 @@
 				"satuan" : $("#satuan"+kode).val(),
 				"id_workout" : $("#id_workout"+kode).val(),
 				"waktu" : $("#waktu"+kode).val(),
-				"user_id" : $("#user_id"+kode).val(),
+				"apikey" : $("#apikey"+kode).val(),
 				"judul" : $("#judul"+kode).val(),
-				"imageurl" : $("#imageurl"+kode).val(),
 				"isi" : $("#isi"+kode).val()
 			};
 			var status = $(".tbCoba."+kode).attr("status");
-			if(status == "update") reqUrl = tempUrl + $("#id_log"+kode).val()
+			if(status == "update") reqUrl = tempUrl + $("#id_log"+kode).val();
 			ajax(params,token);
 		});
+		
+		$(".tryUpload").click(function(e){
+		    e.preventDefault();
+			var token = $("#authorization"+kode).val();
+			var params = {
+				"user_id" : $("#user_id"+kode).val(),
+				"judul" : $("#judul"+kode).val(),
+				"imageurl" : $("#imageurl"+kode).val(),
+				"isi" : $("#isi"+kode).val(),
+				"apikey" : $("#apikey"+kode).val()
+			};
+			var status = $(".tbCoba."+kode).attr("status");
+			if(status == "update") reqUrl = tempUrl + $("#id_log"+kode).val()
+			var tes = new FormData($("#formUpload")[0]);
+			console.log(tes);
+			ajaxUpload(tes,token);
+		});
+		
+		
 		
 	});
 </script>

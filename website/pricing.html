@@ -1,31 +1,32 @@
 <!doctype html>
 <html lang="en">
 <head>
-<style type="text/css">
-    a {
-        color: #EE9500 !important;
-    }
-</style>
+    <style type="text/css">
+        a {
+            color: #EE9500 !important;
+        }
+    </style>
+    
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-		<script src="/FatBurnerV1/website/jquery-3.2.1.min.js"> </script>
+		<script src="/jquery-3.2.1.min.js"> </script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     
     <link rel="shortcut icon" href="images/logo.ico" />
     
     <title>Pricing</title>
-    
 </head>
+
 <body style="overflow-x: hidden;overflow-y: scroll;">    
     <div class="container-fluid" style="background-color: black; height: 100%;">
         <!-- navbar -->
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link" href="home.html">Home</a>
+                <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="testAPI.html">APIs</a>
@@ -36,9 +37,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="pricing.html">Pricing</a>
             </li>
-            <!-- <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
-            </li> -->
         </ul>
     </div>
     
@@ -53,7 +51,7 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Fitur Utama</li>
                         <li class="list-group-item">Non Aktif setelah 30 menit</li>
-                        <li class="list-group-item">1.000 Hit / 24 Jam</li>
+                        <li class="list-group-item">50 Hit / 24 Jam</li>
                         <li class="list-group-item">1 User</li>
                         <br><br>
                     <a href="#" class="btn btn-dark" tipe="Free">Free</a></li>
@@ -69,10 +67,10 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Fitur Utama</li>
                         <li class="list-group-item">Non Aktif setelah 30 menit</li>
-                        <li class="list-group-item">1.000 Hit / 24 Jam</li>
+                        <li class="list-group-item">Tanpa Batas</li>
                         <li class="list-group-item">1 User</li>
                         <br><br>
-                    <a href="#" class="btn btn-dark" tipe="Basic">Rp 50.000 / MONTH</a></li>
+                    <a href="#" class="btn btn-dark" tipe="Basic">Rp 50.000 / Month</a></li>
                     </ul>
                     </div>
                 </div>
@@ -85,10 +83,10 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">Semua Fitur</li>
                         <li class="list-group-item">Tanpa Batas</li>
-                        <li class="list-group-item">5.000 Hit / 24 Jam </li>
+                        <li class="list-group-item">Tanpa Batas</li>
                         <li class="list-group-item">>1 User</li>
                         <br><br>
-                    <a href="#" class="btn btn-dark" tipe="Silver">Rp 200.000 / MONTH</a></li>
+                    <a href="#" class="btn btn-dark" tipe="Silver">Rp 200.000 / Month</a></li>
                     </ul>
                     </div>
                 </div>
@@ -104,7 +102,7 @@
                         <li class="list-group-item">Tanpa Batas</li>
                         <li class="list-group-item">>1 User</li>
                         <br><br>
-                    <a href="#" class="btn btn-dark" tipe="Gold">Rp 200 / HIT</a></li>
+                    <a href="#" class="btn btn-dark" tipe="Gold">Rp 200 / Request</a></li>
                     </ul>
                     </div>
                 </div>
@@ -128,10 +126,41 @@
 						</div>
 					</div>
 					<div class="modal-body">
-						<p>Some text in the modal.</p>
+						<div class="form-group">
+							<label for="email">Email: </label>
+							<input type="text" class="form-control" id="email">
+							<label for="password">Password: </label>
+							<input type="text" class="form-control" id="password">
+							<div class="form-inline" style="margin-top:5px">
+								<label for="gender">Jenis kelamin: </label>
+								<select id="gender" class="form-control mx-sm-3"> 
+									<option value="0"> Laki-laki </option>
+									<option value="1"> Perempuan </option>
+								</select>
+								<label for="goal">Goal: </label>
+								<select id="goal" class="form-control mx-sm-3"> 
+									<option value="0"> Goal 1 </option>
+									<option value="1"> Goal 2 </option>
+									<option value="2"> Goal 3 </option>
+									<option value="3"> Goal 4 </option>
+								</select>
+							</div>
+							<div class="form-inline" style="margin-top:5px">
+    							<label for="weight">Berat badan: </label>
+    							<input type="number" class="form-control mx-sm-3" id="weight" style="width:80px">
+    							<label for="height">Tinggi badan: </label>
+    							<input type="number" class="form-control mx-sm-3" id="height" style="width:80px">
+    						</div>
+    						<div class="form-inline" style="margin-top:5px">
+    							<label for="bloodsugar">Gula darah: </label>
+    							<input type="text" class="form-control mx-sm-3" id="bloodsugar" style="width:80px">
+    							<label for="cholesterol">Kolesterol: </label>
+    							<input type="text" class="form-control mx-sm-3" id="cholesterol" style="width:80px">
+    						</div>
+						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn btn-default">Register</button>
+						<button class="btn btn-success">Register</button> <br>
 					</div>
 				</div>
 				
@@ -156,7 +185,31 @@
 	}
 	
 	function regisNow(){
-		alert("Register Berhasil");
+	    $(".modal-title").html("Registrasi <br> <h5>Tipe:" + tipe + "<h5>");
+	    var params = {
+				"email" : $("#email").val(),
+				"password" : $("#password").val(),
+				"goal" : $("#goal").val(),
+				"gender" : $("#gender").val(),
+				"weight" : $("#weight").val(),
+				"height" : $("#height").val(),
+				"bloodsugar" : $("#bloodsugar").val(),
+				"cholesterol" : $("#cholesterol").val(),
+				"tipe" : tipe
+		};
+		
+		$.ajax({ 
+			 type : "POST", 
+			 url : "http://pikukupikumu.com/fat/public/register", 
+			 data : params,
+			 success : function(result) { 
+					 alert(result.message);
+			 },
+			 error : function(err){
+					alert(result.message);
+			 }
+		 }); 
+		
 		$("#myModal").modal("hide");
 	}
 	
