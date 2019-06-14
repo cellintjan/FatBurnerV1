@@ -56,7 +56,7 @@ $app->post('/login', function (Request $request, Response $response, array $args
 		$setting = $this->get('settings');
 		// Membuat token baru
 		$token = JWT::encode(['id' => $user->user_id, 'email' => $user->email], $setting['jwt']['secret'], "HS256");
-		return $this->response->withJson(['error'=>false,'message'=>["token"=>$token,"apikey"=>$user->apikey,"userid"=>$user->user_id,"weight"=>$user->weight,"name"=>$user->name]]);
+		return $this->response->withJson(['error'=>false,'message'=>["token"=>$token,"apikey"=>$user->apikey,"userid"=>$user->user_id,"weight"=>$user->weight,"name"=>$user->name,"goal"=>$user->goal]]);
 	}
 });
 
@@ -83,7 +83,143 @@ function updateRequest($apikey,$default,$app){
     return $result;
 }
 
+//get notification
+$app->get('/notification', function (Request $request, Response $response, array $args) {
+	$sql = $this->db->prepare("SELECT s.id_log,f.nama,s.tipe FROM schedule s,food f WHERE s.id_food = f.id AND s.time < CURRENT_TIMESTAMP() AND s.isdone = false");
+	
+	$sql->bindParam("id",$args['id']);
+	$sql->execute();
+	$listLog = $sql->fetchAll();
+	
+	if(isset($args['apikey'])){
+       $listLog = updateRequest($args['apikey'],$listLog,$this);
+    }
+	
+	return $this->response->withJson($listLog);
+});
+
+//update notification
+$app->post('/notification/update/{id}', function (Request $request, Response $response, array $args) {
+	$input = $request->getParsedBody();
+	$status = "1";
+	
+	if($input['apikey']!=""){
+       $status = updateRequest($input['apikey'],"1",$this);
+    }
+	
+	if($status!="1"){
+		return $this->response->withJson($status);
+	}else{
+	    $sql = $this->db->prepare("update schedule set isdone=true where id_log=:id");
+		$sql->bindParam("id",$args['id']);
+		$sql->execute();
+		$status = $sql->rowCount();
+		
+		if(!$status){
+			return $this->response->withJson(['error'=>true,'message'=>'Update Failed']);
+		}else{
+			return $this->response->withJson(['error'=>false,'message'=>'Update Success']);
+		}
+	}
+});
+	
 $app->group('/api', function (\Slim\App $app) {
+    
+    //update firebase token
+	$app->post('/firebase/{id}', function (Request $request, Response $response, array $args) {
+		$input = $request->getParsedBody();
+		$status = "1";
+		
+		if($input['apikey']!=""){
+	       $status = updateRequest($input['apikey'],"1",$this);
+	    }
+		
+		if($status!="1"){
+			return $this->response->withJson($status);
+		}else{
+		    $sql = $this->db->prepare("update user set firebase_key=:firebase_key
+															where user_id=:id");
+    		$sql->bindParam("id",$args['id']);
+    		$sql->bindParam("firebase_key",$input['firebase_key']);
+    		$sql->execute();
+    		$status = $sql->rowCount();
+    		
+    		if(!$status){
+    			return $this->response->withJson(['error'=>true,'message'=>'Update Failed']);
+    		}else{
+    			return $this->response->withJson(['error'=>false,'message'=>'Update Success']);
+    		}
+		}
+	});
+	
+	//get schedule
+	$app->get('/schedule/log/{id}/{filter}/[{apikey}]', function (Request $request, Response $response, array $args) {
+		$sql = $this->db->prepare("SELECT f.nama,s.id_log,s.tipe FROM schedule s,food f WHERE s.id_food = f.id AND STR_TO_DATE(s.time,'%d-%m-%Y') = CURDATE() AND s.isdone = false AND s.id_user=:id");
+		
+		
+		$sql->bindParam("id",$args['id']);
+		$sql->execute();
+		$listLog = $sql->fetchAll();
+		
+		if(isset($args['apikey'])){
+	       $listLog = updateRequest($args['apikey'],$listLog,$this);
+	    }
+		
+		return $this->response->withJson($listLog);
+	});
+	
+	//insert schedule
+	$app->post('/schedule/insert', function (Request $request, Response $response, array $args) {
+		$input = $request->getParsedBody();
+		$status = "1";
+		
+		if($input['apikey']!=""){
+	       $status = updateRequest($input['apikey'],"1",$this);
+	    }
+		
+		if($status!="1"){
+			return $this->response->withJson($status);
+		}else{
+		     $sql = $this->db->prepare("insert into schedule(id_user, id_food, time, isdone,tipe)
+															 values(:id_user, :id_food, :time,false,:tipe)");
+    		$sql->bindParam("id_user",$input['id_user']);
+    		$sql->bindParam("id_food",$input['id_food']);
+    		$sql->bindParam("time",$input['time']);
+    		$sql->bindParam("tipe",$input['tipe']);
+    		$sql->execute();
+    		$status = $sql->rowCount();
+    		
+    		if(!$status){
+    			return $this->response->withJson(['error'=>true,'message'=>'Insert Failed']);
+    		}else{
+    			return $this->response->withJson(['error'=>false,'message'=>'Insert Success']);
+    		}
+		}
+	});
+	
+	//delete log makan
+	$app->delete('/schedule/delete/{id}/[{apikey}]', function (Request $request, Response $response, array $args) {
+		$status = "1";
+		if(isset($args['apikey'])){
+		    $status = updateRequest($args['apikey'],"1",$this);
+		}
+		
+		if($status!="1"){
+			return $this->response->withJson($status);
+		}else{
+		    $sql = $this->db->prepare("delete from schedule where id_log=:id");
+			$sql->bindParam("id", $args['id']);
+			$sql->execute();
+			$status = $sql->rowCount();
+			
+			if(!$status){
+				return $this->response->withJson(['error'=>true,'message'=>'Delete Failed']);
+			}else{
+				return $this->response->withJson(['error'=>false,'message'=>'Delete Success']);
+			}
+		}
+	});
+	
 	//get all articles
 	$app->get('/articles/[{apikey}]',function (Request $request, Response $response, array $args) {
 	    $sql = $this->db->prepare("select a.artikel_id as artikelid, a.judul as judul, u.name as nama, a.imageurl, a.datecreated, a.isi from artikel a, user u where u.user_id = a.user_id ORDER BY artikelid DESC");
@@ -163,7 +299,7 @@ $app->group('/api', function (\Slim\App $app) {
 		if($status!="1"){
 			return $this->response->withJson($status);
 		}else{
-		    $sql = $this->db->prepare("update logmakan set judul=:judul,
+		    $sql = $this->db->prepare("update artikel set judul=:judul,
 		                               isi=:isi where artikel_id=:id");
     		$sql->bindParam("id",$args['id']);
     		$sql->bindParam("judul",$input['judul']);
@@ -447,7 +583,7 @@ $app->group('/api', function (\Slim\App $app) {
 	
 	//get calories goal
 	$app->get('/calorie/{id}', function (Request $request, Response $response, array $args) {
-		$sql = $this->db->prepare("select calorie from user where user_id = :userid");
+		$sql = $this->db->prepare("select calorie,weight,height,bloodsugar,cholesterol,goal from user where user_id = :userid");
 		$sql->bindParam("userid",$args['id']);
 		$sql->execute();
 		$calorie = $sql->fetchObject();
@@ -458,10 +594,36 @@ $app->group('/api', function (\Slim\App $app) {
 	$app->post('/calorie/update/{userid}', function (Request $request, Response $response, array $args) {
 		$input = $request->getParsedBody();
 		$sql = $this->db->prepare("update user 
-															set calorie=:calorie
+															set calorie=:calorie,
+															weight=:weight,
+															height=:height,
+															bloodsugar=:bloodsugar,
+															cholesterol=:cholesterol,
+															goal=:goal
 															where user_id=:userid");
 		$sql->bindParam("userid",$args['userid']);
 		$sql->bindParam("calorie",$input['calorie']);
+		$sql->bindParam("weight",$input['weight']);
+		$sql->bindParam("height",$input['height']);
+		$sql->bindParam("bloodsugar",$input['bloodsugar']);
+		$sql->bindParam("cholesterol",$input['cholesterol']);
+		$sql->bindParam("goal",$input['goal']);
+		$sql->execute();
+		$status = $sql->rowCount();
+		if(!$status){
+			return $this->response->withJson(['error'=>true,'message'=>'Update Failed']);
+		}else{
+			return $this->response->withJson(['error'=>false,'message'=>'Update Success']);
+		}
+	});
+	
+	$app->post('/password/update/{userid}', function (Request $request, Response $response, array $args) {
+		$input = $request->getParsedBody();
+		$sql = $this->db->prepare("update user 
+															set password=:password
+															where user_id=:userid");
+		$sql->bindParam("userid",$args['userid']);
+		$sql->bindParam("password",$input['password']);
 		$sql->execute();
 		$status = $sql->rowCount();
 		if(!$status){
